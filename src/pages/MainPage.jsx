@@ -5,7 +5,7 @@ export default function MainPage() {
 
   return (
     <>
-      <h1 className='text-blue-600 bg-blue-200 outline-1 rounded-lg p-4 w-fit'>Página inicial com o tailwindcss funcionando uhu</h1>
+      <h1 className='bg-primary-light text-secondary-dark outline-1 rounded-lg p-4 w-fit'>Página inicial com o tailwindcss funcionando uhu</h1>
     </>
   )
 }
