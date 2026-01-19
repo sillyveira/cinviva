@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+/* Fonte DM Sans */
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   /* cores primárias */
   --color-primary-shine: #c4dcff;
@@ -14,4 +39,28 @@
   --color-secondary-default: #11b163;
   --color-secondary-medium: #0e8f50;
   --color-secondary-dark: #0a6639;
+
+  /* fonte */
+  --font-family-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* tamanhos de fonte com line-height */
+  --text-xsmall: 14px;
+  --text-xsmall--line-height: 1.5;
+  
+  --text-small: 16px;
+  --text-small--line-height: 1.5;
+  
+  --text-body: 18px;
+  --text-body--line-height: 1.6;
+  
+  --text-display: 48px;
+  --text-display--line-height: 1.2;
+  
+  --text-large: 64px;
+  --text-large--line-height: 1.1;
+
+  /* font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
