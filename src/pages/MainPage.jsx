@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import Icon from '../components/icons/IconProperties'
+import Search from '../components/icons/Search'
 
 export default function MainPage() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <Search/>
       {/* Teste de todas as cores primárias */}
       <div className="mb-8">
         <h2 className="text-small font-medium mb-2">Cores Primárias:</h2>
