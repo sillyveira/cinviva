@@ -1,13 +1,29 @@
 import { useState } from 'react'
-import Icon from '../components/icons/IconProperties'
-import Search from '../components/icons/Search'
+import {
+  ArrowLeft,
+ ArrowRight,
+  Book,
+  Calendar,
+  ChevronDown,
+  ChevronUp,
+  Clock,
+  ExternalLink,
+  Map,
+  MapPin,
+  Market,
+  Maximize,
+  Search,
+  ShoppingBag,
+  SliderVertical,
+  Star,
+  Tag
+} from '../components/icons';
 
 export default function MainPage() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Search/>
       {/* Teste de todas as cores primárias */}
       <div className="mb-8">
         <h2 className="text-small font-medium mb-2">Cores Primárias:</h2>
@@ -47,6 +63,30 @@ export default function MainPage() {
         <p className="text-body font-regular">Regular (400)</p>
         <p className="text-body font-medium">Medium (500)</p>
         <p className="text-body font-bold">Bold (700)</p>
+      </div>
+
+      {/* Card with all icons */}
+      <div className="card">
+        <h2 className="text-small font-medium mb-2">Icons:</h2>
+        <div className="grid grid-cols-4 gap-4">
+          <ArrowLeft />
+          <ArrowRight />
+          <Book />
+          <Calendar />
+          <ChevronDown />
+          <ChevronUp />
+          <Clock />
+          <ExternalLink />
+          <Map />
+          <MapPin />
+          <Market />
+          <Maximize />
+          <Search />
+          <ShoppingBag />
+          <SliderVertical />
+          <Star />
+          <Tag />
+        </div>
       </div>
     </>
   )

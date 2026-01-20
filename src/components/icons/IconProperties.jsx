@@ -1,4 +1,4 @@
 export default {
   size: "24",
-  color: "text-primary-light"
+  color: "text-primary-default"
 }
