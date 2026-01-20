@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import { MapPin } from 'lucide-react'
+import { IconTitle } from '../components/IconTitle'
+import { TagHolder } from '../components/TagHolder'
+import { Typography } from '../components/Typography'
 import {
   ArrowLeft,
  ArrowRight,
@@ -9,7 +13,6 @@ import {
   Clock,
   ExternalLink,
   Map,
-  MapPin,
   Market,
   Maximize,
   Search,
@@ -21,6 +24,18 @@ import {
 
 export default function MainPage() {
   const [count, setCount] = useState(0)
+
+  const exampleTags = [
+    { text: 'Produtos Locais', variant: 'primary' },
+    { text: 'Alimentos Orgânicos', variant: 'primary' },
+    { text: 'Artesanato Comunitário', variant: 'secondary' },
+    { text: 'Hortifruti Regional', variant: 'primary' },
+    { text: 'Produtos Caseiros', variant: 'primary' },
+    { text: 'Plantas Medicinais', variant: 'tertiary' },
+    { text: 'Reciclados Criativos', variant: 'primary' },
+    { text: 'Pães', variant: 'secondary' },
+    { text: 'Pescados', variant: 'primary' },
+  ];
 
   return (
     <>
@@ -62,7 +77,27 @@ export default function MainPage() {
         <h2 className="text-small font-medium mb-2">Font Weights:</h2>
         <p className="text-body font-regular">Regular (400)</p>
         <p className="text-body font-medium">Medium (500)</p>
-        <p className="text-body font-bold">Bold (700)</p>
+        <Typography Tag="h1" Size="display" Weight="bold">Bold (700)</Typography>
+      </div>
+
+      {/* Teste do novo componente */}
+      <div className="mt-8 border border-dashed border-gray-300 p-4 space-y-4">
+        <p className="text-xsmall text-gray-400 mb-2">Área de teste do IconTitle:</p>
+
+        {/* Teste de quebra de linha */}
+        <IconTitle
+            icon={MapPin}
+            title="Este é um título muito longo para testar se o ícone continua alinhado no topo e não fica estranho no meio do texto quando quebra linha. Lorempsum tlgd né."
+        />
+      </div>
+
+
+      {/* Teste do novo componente TagHolder */}
+      <div className="mt-8 border border-dashed border-gray-300 p-4">
+        <p className="text-xsmall text-gray-400 mb-2">Área de teste do TagHolder:</p>
+        
+        {/* Exemplo de uso com múltiplas tags para testar a quebra de linha e variantes */}
+        <TagHolder tags={exampleTags} />
       </div>
 
       {/* Card with all icons */}
