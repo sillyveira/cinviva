@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { MapPin } from 'lucide-react'
 import { IconTitle } from '../components/IconTitle'
 import { TagHolder } from '../components/TagHolder'
+import { Accordion } from '../components/Accordion'
 
 export default function MainPage() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,17 @@ export default function MainPage() {
     { text: 'Reciclados Criativos', variant: 'primary' },
     { text: 'Pães', variant: 'secondary' },
     { text: 'Pescados', variant: 'primary' },
+  ];
+
+  const mercadosData = [
+    { id: 1, text: 'São José', imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png' },
+    { id: 2, text: 'Casa Amarela', imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png' },
+    { id: 3, text: 'Encruzilhada', imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png' },
+  ];
+
+  const feirasData = [
+    { id: 1, text: 'Feira de Boa Viagem' },
+    { id: 2, text: 'Feira do Bom Jesus' },
   ];
 
   return (
@@ -79,6 +91,22 @@ export default function MainPage() {
         
         {/* Exemplo de uso com múltiplas tags para testar a quebra de linha e variantes */}
         <TagHolder tags={exampleTags} />
+      </div>
+
+      <div className="mt-8 border border-dashed border-gray-300 p-4 space-y-4">
+        <p className="text-xsmall text-gray-400 mb-2">Teste do Accordion:</p>
+        
+        {/* Caso 1: Mercados (Com imagens) */}
+        <Accordion 
+          title="Mercados" 
+          items={mercadosData} 
+        />
+
+        {/* Caso 2: Feiras (Sem imagens) */}
+        <Accordion 
+          title="Feiras Livres" 
+          items={feirasData} 
+        />
       </div>
     </>
   )
