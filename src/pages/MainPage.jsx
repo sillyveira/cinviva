@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { MapPin } from 'lucide-react'
+import { IconTitle } from '../components/IconTitle'
 
 export default function MainPage() {
   const [count, setCount] = useState(0)
@@ -45,6 +47,17 @@ export default function MainPage() {
         <p className="text-body font-regular">Regular (400)</p>
         <p className="text-body font-medium">Medium (500)</p>
         <p className="text-body font-bold">Bold (700)</p>
+      </div>
+
+      {/* Teste do novo componente */}
+      <div className="mt-8 border border-dashed border-gray-300 p-4 space-y-4">
+        <p className="text-xsmall text-gray-400 mb-2">Área de teste do componente:</p>
+
+        {/* Teste de quebra de linha */}
+        <IconTitle
+            icon={MapPin}
+            title="Este é um título muito longo para testar se o ícone continua alinhado no topo e não fica estranho no meio do texto quando quebra linha. Lorempsum tlgd né."
+        />
       </div>
     </>
   )
