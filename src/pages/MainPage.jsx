@@ -3,6 +3,24 @@ import { MapPin } from 'lucide-react'
 import { IconTitle } from '../components/IconTitle'
 import { TagHolder } from '../components/TagHolder'
 import { Typography } from '../components/Typography'
+import {
+  ArrowLeft,
+ ArrowRight,
+  Book,
+  Calendar,
+  ChevronDown,
+  ChevronUp,
+  Clock,
+  ExternalLink,
+  Map,
+  Market,
+  Maximize,
+  Search,
+  ShoppingBag,
+  SliderVertical,
+  Star,
+  Tag
+} from '../components/icons';
 
 export default function MainPage() {
   const [count, setCount] = useState(0)
@@ -21,7 +39,6 @@ export default function MainPage() {
 
   return (
     <>
-      
       {/* Teste de todas as cores primárias */}
       <div className="mb-8">
         <h2 className="text-small font-medium mb-2">Cores Primárias:</h2>
@@ -81,6 +98,30 @@ export default function MainPage() {
         
         {/* Exemplo de uso com múltiplas tags para testar a quebra de linha e variantes */}
         <TagHolder tags={exampleTags} />
+      </div>
+
+      {/* Card with all icons */}
+      <div className="card">
+        <h2 className="text-small font-medium mb-2">Icons:</h2>
+        <div className="grid grid-cols-4 gap-4">
+          <ArrowLeft />
+          <ArrowRight />
+          <Book />
+          <Calendar />
+          <ChevronDown />
+          <ChevronUp />
+          <Clock />
+          <ExternalLink />
+          <Map />
+          <MapPin />
+          <Market />
+          <Maximize />
+          <Search />
+          <ShoppingBag />
+          <SliderVertical />
+          <Star />
+          <Tag />
+        </div>
       </div>
     </>
   )
