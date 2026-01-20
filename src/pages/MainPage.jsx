@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { MapPin } from 'lucide-react'
 import { IconTitle } from '../components/IconTitle'
 import { TagHolder } from '../components/TagHolder'
 import { Typography } from '../components/Typography'
@@ -12,6 +11,7 @@ import {
   ChevronUp,
   Clock,
   ExternalLink,
+  MapPin,
   Map,
   Market,
   Maximize,
@@ -61,28 +61,19 @@ export default function MainPage() {
           <div className="w-20 h-20 bg-secondary-medium"></div>
           <div className="w-20 h-20 bg-secondary-dark"></div>
         </div>
-      </div>
-
-      {/* Teste de tamanhos de fonte */}
-      <div className="mb-8">
-        <h2 className="text-small font-medium mb-2">Tamanhos de Fonte:</h2>
-        <p className="text-xsmall">Extra Small (14px)</p>
-        <p className="text-small">Small (16px)</p>
-        <p className="text-body">Body (18px)</p>
-        <p className="text-display">Display (48px)</p>
-      </div>
+      </div>  
 
       {/* Teste de font weights */}
       <div>
-        <h2 className="text-small font-medium mb-2">Font Weights:</h2>
-        <p className="text-body font-regular">Regular (400)</p>
-        <p className="text-body font-medium">Medium (500)</p>
-        <Typography Tag="h1" Size="display" Weight="bold">Bold (700)</Typography>
+        <Typography tag="h2" size="small" weight="medium" className="mb-60">Font Weights:</Typography>
+        <Typography tag="p" size="body" weight="regular">Regular (400)</Typography>
+        <Typography tag="p" size="body" weight="medium">Medium (500)</Typography>
+        <Typography tag="h1" size="display" weight="bold">Bold (700)</Typography>
       </div>
 
       {/* Teste do novo componente */}
       <div className="mt-8 border border-dashed border-gray-300 p-4 space-y-4">
-        <p className="text-xsmall text-gray-400 mb-2">Área de teste do IconTitle:</p>
+        <Typography size={"xsmall"} className="text-gray-400 mb-2">Área de teste do IconTitle:</Typography>
 
         {/* Teste de quebra de linha */}
         <IconTitle
@@ -94,7 +85,7 @@ export default function MainPage() {
 
       {/* Teste do novo componente TagHolder */}
       <div className="mt-8 border border-dashed border-gray-300 p-4">
-        <p className="text-xsmall text-gray-400 mb-2">Área de teste do TagHolder:</p>
+        <Typography size={"xsmall"} className="text-gray-400 mb-2">Área de teste do TagHolder:</Typography>
         
         {/* Exemplo de uso com múltiplas tags para testar a quebra de linha e variantes */}
         <TagHolder tags={exampleTags} />
@@ -102,7 +93,7 @@ export default function MainPage() {
 
       {/* Card with all icons */}
       <div className="card">
-        <h2 className="text-small font-medium mb-2">Icons:</h2>
+        <Typography size={"small"} tag={"h2"} weight={"medium"} className="mb-2">Icons:</Typography>
         <div className="grid grid-cols-4 gap-4">
           <ArrowLeft />
           <ArrowRight />

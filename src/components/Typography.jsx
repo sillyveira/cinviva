@@ -1,20 +1,20 @@
 export function Typography(values){
-    const {Tag, Size, Weight, children} = values;
+    const {tag, size, weight, children, className} = values;
 
-    const TagOptions = Tag || 'p';
+    const TagOptions = tag || 'p';
 
-    const SizeOptions = {
+    const sizeOptions = {
         xsmall: 'text-xsmall',
         small: 'text-small',     
         body: 'text-body',       
         display: 'text-display', 
         large: 'text-large',
     };
-    const WeightOptions = {
+    const weightOptions = {
         regular: 'font-regular',
         medium: 'font-medium',
         bold: 'font-bold',
     }
     
-    return (<TagOptions className = {`${SizeOptions[Size]} ${WeightOptions[Weight]}`}>{children}</TagOptions>)
+    return (<TagOptions className = {`${className} ${sizeOptions[size]} ${weightOptions[weight]}`}>{children}</TagOptions>)
 }
