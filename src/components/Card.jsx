@@ -1,4 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+/**
+ * Componente Card:
+ * Envolve e renderiza componentes React para agrupá-los em uma moldura de card.
+ ** @param {Object} props
+ * @param {React.ReactNode} props.children - Componente(s) React a ser(em) renderizado(s) no card
+ * @example
+ * <Card>
+ *  <Header/> - Opcional
+ *  <Body/> - Obrigatório
+ *  <Footer/> - Opcional
+ * </Card>
+ * @param {string} [props.classname] - Classes extras
+ */
 
 export default function Card({ 
     children, 
