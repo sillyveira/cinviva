@@ -21,6 +21,7 @@ import {
   Star,
   Tag
 } from '../components/icons';
+import Card from '../components/Card';
 
 export default function MainPage() {
   const [count, setCount] = useState(0)
@@ -39,6 +40,14 @@ export default function MainPage() {
 
   return (
     <>
+
+      <Card>
+        <IconTitle icon={Map} title='Localização' />
+        <div className='m-40 text-center'>
+        MAPA
+        </div>
+      </Card>
+
       {/* Teste de todas as cores primárias */}
       <div className="mb-8">
         <h2 className="text-small font-medium mb-2">Cores Primárias:</h2>
@@ -70,18 +79,6 @@ export default function MainPage() {
         <Typography tag="p" size="body" weight="medium">Medium (500)</Typography>
         <Typography tag="h1" size="display" weight="bold">Bold (700)</Typography>
       </div>
-
-      {/* Teste do novo componente */}
-      <div className="mt-8 border border-dashed border-gray-300 p-4 space-y-4">
-        <Typography size={"xsmall"} className="text-gray-400 mb-2">Área de teste do IconTitle:</Typography>
-
-        {/* Teste de quebra de linha */}
-        <IconTitle
-            icon={MapPin}
-            title="Este é um título muito longo para testar se o ícone continua alinhado no topo e não fica estranho no meio do texto quando quebra linha. Lorempsum tlgd né."
-        />
-      </div>
-
 
       {/* Teste do novo componente TagHolder */}
       <div className="mt-8 border border-dashed border-gray-300 p-4">
