@@ -1,6 +1,7 @@
 import React from 'react'
 import MapCard from '../components/cards/MapCard'
 import DescriptionCard from '../components/cards/DescriptionCard';
+import { ItemSell } from '../components/cards/ItemSell';
 
 export default function Mercado() {
 
@@ -71,6 +72,7 @@ export default function Mercado() {
       <p className="font-regular text-secondary-dark mb-4">
         Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e tal.
       </p>
+      <ItemSell items={['carro', 'moto', 'roupasasdasdasdasdasdasdasd', 'pedranorimmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaammmm', 'ratinho', 'odeio o sigaa']}></ItemSell>
     </div>
   )
 }

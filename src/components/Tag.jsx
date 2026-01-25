@@ -27,6 +27,8 @@ export function Tag({ text, variant = 'primary', className = '' }) {
         inline-block
         px-3 py-1
         rounded-full
+        break-all
+        max-w-full
         ${colorClass}
         ${className}
       `}
