@@ -1,5 +1,6 @@
 import React from 'react'
 import MapCard from '../components/cards/MapCard'
+import DescriptionCard from '../components/cards/DescriptionCard';
 
 export default function Mercado() {
 
@@ -62,7 +63,11 @@ export default function Mercado() {
       </h1>
 
       <MapCard markers={markers} googleMapsLink={"https://maps.app.goo.gl/ke8WQ9pg2B5DFScn7"}></MapCard>
-    
+      <DescriptionCard 
+      location={"Praça Dom Vital, S/N - São José"}
+      description={"O Mercado da Encruzilhada é um tradicional ponto comercial da Zona Norte do Recife, com mais de 200 boxes que oferecem desde alimentos, artigos para casa e tecidos até itens para pets e serviços variados, como restaurantes e lanchonetes. É um espaço onde praticidade e diversidade se encontram no dia a dia da cidade. "}
+      >
+      </DescriptionCard>
       <p className="font-regular text-secondary-dark mb-4">
         Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e tal.
       </p>
