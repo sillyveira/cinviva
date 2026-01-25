@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Fix para Leaflet aparecer corretamente */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
 
 /* Fonte DM Sans */
 @font-face {

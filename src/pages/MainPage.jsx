@@ -41,12 +41,7 @@ export default function MainPage() {
   return (
     <>
 
-      <Card>
-        <IconTitle icon={Map} title='Localização' />
-        <div className='m-40 text-center'>
-        MAPA
-        </div>
-      </Card>
+      
 
       {/* Teste de todas as cores primárias */}
       <div className="mb-8">
