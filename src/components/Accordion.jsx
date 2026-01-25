@@ -5,6 +5,7 @@ import {
   ChevronUp
 } from '../components/icons';
 import { AccordionItem } from './AccordionItem';
+import { Typography } from './Typography';
 
 export function Accordion({ title, items, className = '' }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,33 +21,35 @@ export function Accordion({ title, items, className = '' }) {
           w-full flex items-center justify-between p-4 bg-white transition-all duration-200
           border-2
           ${isOpen 
-            ? 'border-primary-default rounded-t-lg rounded-b-none' // Aberto
-            : 'border-gray-800 rounded-lg'                         // Fechado
+            ? 'border-primary-default rounded-t-lg rounded-b-none' // Aberto: Cor primária
+            : 'border-gray-800 rounded-lg hover:border-primary-default' // Fechado: Cinza escuro com hover
           }
         `}
       >
-        <span className="text-body font-medium text-gray-800">
+        <Typography 
+          tag="h3" 
+          size="body" 
+          weight="medium" 
+          className={`transition-colors ${isOpen ? 'text-primary-default' : 'text-gray-800'}`}
+        >
           {title}
-        </span>
+        </Typography>
         
         {isOpen ? (
           <ChevronUp className="text-primary-default" size={24} />
         ) : (
-          <ChevronDown className="text-gray-800" size={24} />
+          <ChevronDown className="text-gray-800 group-hover:text-primary-default" size={24} />
         )}
       </button>
 
       {isOpen && (
-        <div className="border-2 border-t-0 border-gray-400 rounded-b-lg overflow-hidden bg-white">
+        <div className="border-2 border-t-0 border-gray-300 rounded-b-lg overflow-hidden bg-white shadow-sm">
           {items.map((item, index) => (
             <AccordionItem 
               key={item.id || index}
               text={item.text}
               imageSrc={item.imageSrc}
-
-              // Logzin só pra teste, tem que remover depois
-              onClick={() => console.log(`Clicou em: ${item.text}`)}
-              
+              onClick={() => console.log(`Clicou em: ${item.text}`)} // Logzin
             />
           ))}
         </div>
@@ -61,7 +64,7 @@ Accordion.propTypes = {
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       text: PropTypes.string.isRequired,
-      imageSrc: PropTypes.string, // Opcional
+      imageSrc: PropTypes.string,
     })
   ).isRequired,
   className: PropTypes.string,

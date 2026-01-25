@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Typography } from './Typography';
 
 export function AccordionItem({ text, imageSrc, onClick, className = '' }) {
   return (
@@ -10,15 +11,21 @@ export function AccordionItem({ text, imageSrc, onClick, className = '' }) {
         p-4 
         bg-white cursor-pointer 
         transition-colors duration-200
-        border-b border-gray-300        
+        border-b border-gray-200        
         last:border-b-0
-        hover:border-primary-default    
+        hover:bg-gray-50
+        group
         ${className}
       `}
     >
-      <span className="text-body text-gray-800 font-regular">
+      <Typography 
+        tag="p" 
+        size="body" 
+        weight="regular" 
+        className="text-gray-800 group-hover:text-primary-default transition-colors"
+      >
         {text}
-      </span>
+      </Typography>
 
       {/* Renderização Condicional: Só mostra a imagem SE ela existir */}
       {imageSrc && (
@@ -34,7 +41,7 @@ export function AccordionItem({ text, imageSrc, onClick, className = '' }) {
 
 AccordionItem.propTypes = {
   text: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string, // Opcional (Feiras não terão, Mercados terão)
+  imageSrc: PropTypes.string, 
   onClick: PropTypes.func,
   className: PropTypes.string,
 };
