@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import {
+  ChevronDown,
+  ChevronUp
+} from '../components/icons';
 import { AccordionItem } from './AccordionItem';
 
 export function Accordion({ title, items, className = '' }) {

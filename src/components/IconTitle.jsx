@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from './Typography';
 
 /**
  * Componente IconTitle
@@ -8,10 +9,11 @@ import React from 'react';
  * @param {string} props.title       - O texto do título
  * @param {string} [props.className] - Classes extras
  */
+
 export function IconTitle({ 
   icon: Icon, 
   title, 
-  as: Tag = "h3",
+  tag = "h3",
   color = "text-primary-default",
   className = "" 
 }) {
@@ -23,12 +25,12 @@ export function IconTitle({
       
       <div className={`${color} flex items-center justify-center mt-0.5`}>
         {/* mt-0.5: Um ajuste fino para alinhar perfeitamente o ícone com a altura da letra maiúscula */}
-        {Icon && <Icon size={24} />}
+        {Icon && <Icon/>}
       </div>
-
-      <Tag className={`text-body font-medium text-gray-800`}>
-        {title}
-      </Tag>
+{/* text-body font-medium */}
+        <Typography tag={tag} weight={"medium"} size={"body"} className={`text-gray-800`}>
+          {title}
+        </Typography>
     </div>
   );
 }

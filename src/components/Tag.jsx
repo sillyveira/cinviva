@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Typography } from './Typography';
 
 /**
  * Componente Tag
@@ -21,18 +22,19 @@ export function Tag({ text, variant = 'primary', className = '' }) {
   const colorClass = variantClasses[variant] || variantClasses.primary;
 
   return (
-    <span
+    <div
       className={`
         inline-block
         px-3 py-1
         rounded-full
-        text-xsmall font-medium
         ${colorClass}
         ${className}
       `}
     >
+      <Typography size={"xsmall"} weight={"medium"}>
       {text}
-    </span>
+      </Typography>
+    </div>
   );
 }
 
