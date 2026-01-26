@@ -22,8 +22,10 @@ import {
   Tag
 } from '../components/icons';
 import Card from '../components/Card';
+import EventCard from '../components/EventCard';
 
 export default function MainPage() {
+  // eslint-disable-next-line no-unused-vars
   const [count, setCount] = useState(0)
 
   const exampleTags = [
@@ -39,9 +41,36 @@ export default function MainPage() {
   ];
 
   return (
-    <>
+    <>  
 
-      
+      {/* Teste do EventCard */}
+      <div className="mb-8">
+        <h2 className="text-small font-medium mb-4">EventCard Component:</h2>
+        <div className="flex flex-wrap gap-4">
+          <EventCard 
+            date="QUA, 04 MAI"
+            time="18:00"
+            title="Poesia do Recife"
+            location="Nome do local"
+          />
+          <EventCard 
+            imageUrl="https://i.pinimg.com/1200x/84/be/bc/84bebccc63b8a4e76ba3a846aaabaa1a.jpg"
+            imageAlt="Evento - Oficina Criativa"
+            date="SEX, 06 MAI"
+            time="14:30"
+            title="Oficina Criativa de Artesanato"
+            location="Espaço Comunitário Centro"
+          />
+          <EventCard 
+            imageUrl="https://i.pinimg.com/736x/12/fe/b5/12feb5724268fa74bb5a4ba7ecb73b75.jpg"
+            imageAlt="Evento - Mercado Orgânico"
+            date="SÁB, 07 MAI"
+            time="08:00"
+            title="Mercado Orgânico Semanal"
+            location="Praça da República"
+          />
+        </div>
+      </div>
 
       {/* Teste de todas as cores primárias */}
       <div className="mb-8">
