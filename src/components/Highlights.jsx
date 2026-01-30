@@ -1,7 +1,8 @@
 import React from "react";
 
 /**
- * 
+ * Componente de destaque:
+ * Feito para mostrar informações de um destaque do mercado (Como título, descrição e imagem).
  ** @param {Object} props
  * @param {any} props.image - O caminho para a imagem do destaque.
  * @param {React.ReactNode} props.children - Componente React para ser renderizado como título do destaque
