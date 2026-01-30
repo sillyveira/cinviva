@@ -3,7 +3,8 @@ import Highlights from "./Highlights";
 import { IconTitle } from "./IconTitle";
 
 /**
- * 
+ * Componente de scroll para destaques:
+ * Usado para agrupar um ou mais componentes de destaque em scroll horizontal.
  ** @param {Object} props
  * @param {Array<{id: number, image: any, description: string, icon: import("react").ElementType, title: string, size?: string}>} props.highlist - Array contendo o objeto com os elementos de um destaque.
  * @returns 
