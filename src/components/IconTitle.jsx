@@ -18,7 +18,9 @@ export function IconTitle({
   weight = "medium",
   size = "body",
   iconSize,
-  className = "" 
+  className = ""
+  // Adicionei novos props para conseguir personalizar o tamanho do título. 
+  // Adicionar na doc dos parâmetros caso se torne definitivo.
 }) {
   return (
     <div className={`flex items-start gap-2 ${className}`}>
