@@ -14,8 +14,8 @@ import imgCard from '../assets/imgCard.png'
  * @param {string} props.time - Horário
  * @param {string} props.title - Título
  * @param {string} props.location - Local
- * @param {string} [props.className] - Classes CSS adicionais
- * @param {Function} [props.onClick] - Callback ao clicar no card
+ * @param {string} [props.className]
+ * @param {Function} [props.onClick]
  */
 
 
@@ -42,7 +42,8 @@ export default function EventCard({
                 rounded-2xl 
                 overflow-hidden
                 shadow-[0_3px_3px_rgba(0,0,0,0.2)] 
-                transition-all duration-200 
+                transition-all 
+                duration-200 
                 cursor-pointer 
                 hover:shadow-[0_6px_12px_rgba(0,0,0,0.3)] 
                 active:scale-95 
