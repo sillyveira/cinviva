@@ -1,6 +1,9 @@
 import React from 'react'
+import { Schedules } from '../components/cards/Schedules';
 import MapCard from '../components/cards/MapCard'
 import DescriptionCard from '../components/cards/DescriptionCard';
+import { ItemSell } from '../components/cards/ItemSell';
+import { History } from '../components/cards/History';
 
 export default function Mercado() {
 
@@ -71,6 +74,24 @@ export default function Mercado() {
       <p className="font-regular text-secondary-dark mb-4">
         Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e tal.
       </p>
+      <ItemSell items={['carro', 'moto', 'roupasasdasdasdasdasdasdasd', 'pedranorimmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaammmm', 'ratinho', 'odeio o sigaa']}></ItemSell>
+      <History>TESTE Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+        Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+        Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+        Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+        Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+        Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+        Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+        Bem-vindo à página do Mercado X- vai ter os serviços, destaques, eventos etc e ta
+      </History>
+      <Schedules schedules={[
+        { day: 'Sábado-feira-feira', time: '06:00 - 18:00', isSpecial: false },
+        { day: 'Domingo', time: '06:00 - 13:00', isSpecial: true },
+        { day: 'Feriados', time: '06:00 - 13:00', isSpecial: true },
+        { day: 'Horários de alimentação', time: 'Aberto após 18h', isSpecial: true },
+      ]}></Schedules>
+
     </div>
+    
   )
 }

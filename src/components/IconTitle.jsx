@@ -15,7 +15,12 @@ export function IconTitle({
   title, 
   tag = "h3",
   color = "text-primary-default",
-  className = "" 
+  weight = "medium",
+  size = "body",
+  iconSize,
+  className = ""
+  // Adicionei novos props para conseguir personalizar o tamanho do título. 
+  // Adicionar na doc dos parâmetros caso se torne definitivo.
 }) {
   return (
     <div className={`flex items-start gap-2 ${className}`}>
@@ -23,12 +28,14 @@ export function IconTitle({
          não no meio (o que ficaria feio).
       */}
       
-      <div className={`${color} flex items-center justify-center mt-0.5`}>
+      <div className={`${color} flex items-center justify-center mt-0.5 text-[19px]`}>
         {/* mt-0.5: Um ajuste fino para alinhar perfeitamente o ícone com a altura da letra maiúscula */}
-        {Icon && <Icon/>}
+        {Icon && <Icon size={iconSize}/>}
+        {/* Fiz o tamanho do ícone ser customizável, mas só funciona pro ícone de tag. */}
       </div>
 {/* text-body font-medium */}
-        <Typography tag={tag} weight={"medium"} size={"body"} className={`text-gray-800`}>
+        <Typography tag={tag} weight={weight} size={size} className={`text-gray-800`}>
+          {/* Fazer aceitar o tamanho do título!! */}
           {title}
         </Typography>
     </div>
