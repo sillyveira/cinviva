@@ -1,50 +1,17 @@
-import { useState } from 'react'
-import { IconTitle } from '../components/IconTitle'
-import { TagHolder } from '../components/TagHolder'
-import { Typography } from '../components/Typography'
-import {
-  ArrowLeft,
- ArrowRight,
-  Book,
-  Calendar,
-  ChevronDown,
-  ChevronUp,
-  Clock,
-  ExternalLink,
-  MapPin,
-  Map,
-  Market,
-  Maximize,
-  Search,
-  ShoppingBag,
-  SliderVertical,
-  Star,
-  Tag
-} from '../components/icons';
-import Card from '../components/Card';
-import { Accordion } from '../components/Accordion'
-import HighlightsCard from '../components/HighlightsCard';
-import Bolo from '../assets/boloderolo.png'
-import Charque from '../assets/charque.jpg'
-
-const mockHighlights = [
-    {id: 1, image: Bolo, description: "Doce tradicional pernambucano, feito artesanalmente e muito procurado no mercado.", icon: Tag, title: "Bolo de rolo", size: "xsmall"},
-    {id: 2, image: Charque, description: "Prato típico, conhecido pelo sabor marcante e preparo tradicional.", icon: Tag, title: "Macaxeira com charque.", size: "xs"}
-  ]
+import React from 'react';
+import { TagHolder } from '../components/TagHolder';
+import { Typography } from '../components/Typography';
+import { Accordion } from '../components/Accordion';
+import MapCard from '../components/cards/MapCard';
+import ArrowLeft from '../components/icons/ArrowLeft';
+import ArrowRight from '../components/icons/ArrowRight';
 
 export default function MainPage() {
-  const [count, setCount] = useState(0)
-
-  const exampleTags = [
-    { text: 'Produtos Locais', variant: 'primary' },
-    { text: 'Alimentos Orgânicos', variant: 'primary' },
-    { text: 'Artesanato Comunitário', variant: 'secondary' },
-    { text: 'Hortifruti Regional', variant: 'primary' },
-    { text: 'Produtos Caseiros', variant: 'primary' },
-    { text: 'Plantas Medicinais', variant: 'tertiary' },
-    { text: 'Reciclados Criativos', variant: 'primary' },
-    { text: 'Pães', variant: 'secondary' },
-    { text: 'Pescados', variant: 'primary' },
+  const tags = [
+    { id: 1, text: 'Cultura', variant: 'primary' },
+    { id: 2, text: 'Lazer', variant: 'primary' },
+    { id: 3, text: 'Serviços', variant: 'primary' },
+    { id: 4, text: 'Comida', variant: 'primary' },
   ];
 
   const mercadosData = [
@@ -58,95 +25,120 @@ export default function MainPage() {
     { id: 2, text: 'Feira do Bom Jesus' },
   ];
 
+    const markers = [
+    {
+      title: "Mercado São José",
+      position: [-8.068519, -34.877681],
+      image:
+        "",
+      description: "Mercado histórico do Recife",
+    },
+    {
+      title: "Mercado da Madalena",
+      position: [-8.0525, -34.908611],
+      image: "",
+      description: "Mercado tradicional do bairro da Madalena",
+    },
+    {
+      title: "Mercado da Encruzilhada",
+      position: [-8.0368, -34.89225],
+      image: "",
+      description: "Mercado público da Encruzilhada",
+    },
+    {
+      title: "Mercado de Casa Amarela",
+      position: [-8.026667, -34.918056],
+      image: "",
+      description: "Mercado tradicional de Casa Amarela",
+    },
+    {
+      title: "Mercado da Boa Vista",
+      position: [-8.055278, -34.8975],
+      image: "",
+      description: "Mercado público do bairro da Boa Vista",
+    },
+    {
+      title: "Mercado do Cordeiro",
+      position: [-8.051944, -34.921389],
+      image: "",
+      description: "Mercado público do Cordeiro",
+    },
+    {
+      title: "Mercado de Beberibe",
+      position: [-8.002586325911954, -34.89718131991167],
+      image: "",
+      description: "Mercado público de Beberibe",
+    },
+    {
+      title: "Mercado de Nova Descoberta",
+      position: [-8.000356841203415, -34.9226803922649],
+      image: "",
+      description: "Mercado público de Nova Descoberta",
+    },
+  ];
+
   return (
-    <>
+    <div className="bg-white min-h-screen p-6">
+      {/* Botão Voltar */}
+      <button className="flex items-center gap-2 text-primary-default bg-transparent border-none outline-none hover:opacity-80 transition-opacity mb-4">
+        <ArrowLeft />
+        <Typography size="body" weight="medium" className="text-primary-default">
+          Voltar
+        </Typography>
+      </button>
 
-      
+      {/* Imagem Placeholder */}
+      <img 
+        src="https://placehold.co/346x221" 
+        alt="Placeholder" 
+        className="w-full max-w-[346px] h-auto rounded-lg mb-4"
+      />
 
-      {/* Teste de todas as cores primárias */}
-      <div className="mb-8">
-        <h2 className="text-small font-medium mb-2">Cores Primárias:</h2>
-        <div className="flex gap-4">
-          <div className="w-20 h-20 bg-primary-shine"></div>
-          <div className="w-20 h-20 bg-primary-lightest"></div>
-          <div className="w-20 h-20 bg-primary-light"></div>
-          <div className="w-20 h-20 bg-primary-default"></div>
-          <div className="w-20 h-20 bg-primary-medium"></div>
-          <div className="w-20 h-20 bg-primary-dark"></div>
-        </div>
-      </div>
+      {/* TagHolder */}
+      <TagHolder tags={tags} className="mb-6" />
 
-      {/* Teste de todas as cores secundárias */}
-      <div className="mb-8">
-        <h2 className="text-small font-medium mb-2">Cores Secundárias:</h2>
-        <div className="flex gap-4">
-          <div className="w-20 h-20 bg-secondary-light"></div>
-          <div className="w-20 h-20 bg-secondary-default"></div>
-          <div className="w-20 h-20 bg-secondary-medium"></div>
-          <div className="w-20 h-20 bg-secondary-dark"></div>
-        </div>
-      </div>  
+      {/* Texto Descrição */}
+      <Typography size="body" weight="regular" className="text-gray-800 mb-6">
+        A Conviva administra 42 equipamentos, dentre eles estão os pátios de feiras, as feiras livres, os centros comerciais, as praças de alimentação, os centros de comércio popular e os mercados públicos, como os localizados na Boa Vista, Madalena, Encruzilhada, Cordeiro, São José e Casa Amarela. A Autarquia também executa manutenção, revitalização e obras nesses espaços, que são centros de cultura, história e culinária regionais.
+      </Typography>
 
-      {/* Teste de font weights */}
-      <div>
-        <Typography tag="h2" size="small" weight="medium" className="mb-60">Font Weights:</Typography>
-        <Typography tag="p" size="body" weight="regular">Regular (400)</Typography>
-        <Typography tag="p" size="body" weight="medium">Medium (500)</Typography>
-        <Typography tag="h1" size="display" weight="bold">Bold (700)</Typography>
-      </div>
+      {/* Botão Ir ao site do Conviva */}
+      <button className="flex items-center gap-2 bg-white border px-6 py-3 rounded-full hover:bg-primary-medium transition-colors mb-6">
+        <Typography size="body" weight="medium" className="text-primary-default">
+          Ir ao site do Conviva
+        </Typography>
+        <ArrowRight />
+      </button>
 
-      {/* Teste do novo componente TagHolder */}
-      <div className="mt-8 border border-dashed border-gray-300 p-4">
-        <Typography size={"xsmall"} className="text-gray-400 mb-2">Área de teste do TagHolder:</Typography>
-        
-        {/* Exemplo de uso com múltiplas tags para testar a quebra de linha e variantes */}
-        <TagHolder tags={exampleTags} />
-      </div>
+      {/* Texto Mapa dos Mercados */}
+      <Typography size="body" weight="bold" className="text-gray-800 mb-4">
+        Mapa dos Mercados do Recife
+      </Typography>
 
-      {/* Card with all icons */}
-      <div className="card">
-        <Typography size={"small"} tag={"h2"} weight={"medium"} className="mb-2">Icons:</Typography>
-        <div className="grid grid-cols-4 gap-4">
-          <ArrowLeft />
-          <ArrowRight />
-          <Book />
-          <Calendar />
-          <ChevronDown />
-          <ChevronUp />
-          <Clock />
-          <ExternalLink />
-          <Map />
-          <MapPin />
-          <Market />
-          <Maximize />
-          <Search />
-          <ShoppingBag />
-          <SliderVertical />
-          <Star />
-          <Tag />
-        </div>
-      </div>
-
-      <div className="mt-8 border border-dashed border-gray-300 p-4 space-y-4">
-        <p className="text-xsmall text-gray-400 mb-2">Teste do Accordion:</p>
-        
-        {/* Caso 1: Mercados (Com imagens) */}
-        <Accordion 
-          title="Mercados" 
-          items={mercadosData} 
-        />
-
-        {/* Caso 2: Feiras (Sem imagens) */}
-        <Accordion 
-          title="Feiras Livres" 
-          items={feirasData} 
+      {/* Componente Mapa */}
+      <div className="mb-4">
+        <MapCard 
+          markers={markers}
+          googleMapsLink="https://maps.google.com"
+          zoom={12}
+          withCard={false}
+          width = 'w-90'
+          height = 'h-58'
         />
       </div>
 
-      <div className="mt-8 border border-dashed border-gray-300 p-4 space-y-4">
-        <p className="text-xsmall text-gray-400 mb-2">Teste do Card de Destaques:</p>
-        <HighlightsCard highlists={mockHighlights}/>  
+      {/* Texto azul centralizado */}
+      <div className="text-center mb-6">
+        <Typography size="body" weight="medium" className="text-primary-default cursor-pointer hover:underline">
+          Ver o Mapa do Recife
+        </Typography>
       </div>
-    </>
-  )
+
+      {/* Accordions */}
+      <div className="space-y-4">
+        <Accordion title="Mercados" items={mercadosData} />
+        <Accordion title="Feiras" items={feirasData} />
+      </div>
+    </div>
+  );
 }
