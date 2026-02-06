@@ -11,6 +11,9 @@ import { Typography } from '../components/Typography';
 import { IconTitle } from '../components/IconTitle';
 import { Calendar } from '../components/icons';
 import ArrowLeft from '../components/icons/ArrowLeft';
+import EventCard from '../components/EventCard';
+import EventCarousel from '../components/EventCarousel';
+import { useResponsiveCards } from '../hooks/useResponsiveCards';
 
 // Mock API - Simulação de dados do mercado
 const getMercadoData = (mercadoId) => {
@@ -53,6 +56,71 @@ const getMercadoData = (mercadoId) => {
           description: "Pães frescos e artesanais",
           title: "Pães"
         }
+      ],
+      eventos: [
+        {
+          id: 1,
+          date: "QUA, 04 MAI",
+          time: "18:00",
+          title: "Poesia do Recife",
+          location: "Mercado São José",
+          imageUrl: "https://i.pinimg.com/736x/12/fe/b5/12feb5724268fa74bb5a4ba7ecb73b75.jpg",
+          imageAlt: "Evento - Poesia do Recife"
+        },
+        {
+          id: 2,
+          imageUrl: "https://i.pinimg.com/1200x/84/be/bc/84bebccc63b8a4e76ba3a846aaabaa1a.jpg",
+          imageAlt: "Evento - Oficina Criativa",
+          date: "SEX, 06 MAI",
+          time: "14:30",
+          title: "Oficina Criativa de Artesanato",
+          location: "Espaço Comunitário Centro"
+        },
+        {
+          id: 3,
+          imageUrl: "https://i.pinimg.com/736x/12/fe/b5/12feb5724268fa74bb5a4ba7ecb73b75.jpg",
+          imageAlt: "Evento - Mercado Orgânico",
+          date: "SÁB, 07 MAI",
+          time: "08:00",
+          title: "Mercado Orgânico Semanal",
+          location: "Praça da República"
+        },
+        {
+          id: 4,
+          imageUrl: 'https://i.pinimg.com/1200x/1c/83/56/1c83565b93e8308a604237bd0ea7ce19.jpg',
+          imageAlt: 'Evento - Feira de Livros',
+          date: "DOM, 08 MAI",
+          time: "10:00",
+          title: "Feira de Livros Usados",
+          location: "Biblioteca Central"
+        },
+        {
+          id: 5,
+          imageUrl: "https://i.pinimg.com/1200x/84/be/bc/84bebccc63b8a4e76ba3a846aaabaa1a.jpg",
+          imageAlt: "Evento - Show Musical",
+          date: "SEG, 09 MAI",
+          time: "20:00",
+          title: "Show Musical ao Vivo",
+          location: "Anfiteatro do Recife"
+        },
+        {
+          id: 6,
+          imageUrl: 'https://i.pinimg.com/736x/9e/bc/dc/9ebcdc8102c42b5dc1d8246c9e6eb505.jpg',
+          imageAlt: 'Evento - Fotografia',
+          date: "TER, 10 MAI",
+          time: "15:00",
+          title: "Workshop de Fotografia",
+          location: "Estúdio Criativo"
+        },
+        {
+          id: 7,
+          imageUrl: "https://i.pinimg.com/736x/5f/fe/02/5ffe02ca4d2e0302f803a6e9a153baaa.jpg",
+          imageAlt: "Evento - Yoga no Parque",
+          date: "QUA, 11 MAI",
+          time: "07:00",
+          title: "Yoga no Parque",
+          location: "Parque da Jaqueira"
+        }
       ]
     }
   };
@@ -64,6 +132,7 @@ export default function Mercado() {
   const { mercadoId } = useParams();
   const navigate = useNavigate();
   const [mercadoData, setMercadoData] = useState(null);
+  const cardsPerView = useResponsiveCards(); // Hook para responsividade
 
   useEffect(() => {
     // Simulação de chamada à API
@@ -142,14 +211,23 @@ export default function Mercado() {
       </div>
 
       {/* Card de Eventos */}
-      <div className="mb-6">
-        <Card>
-          <IconTitle icon={Calendar} title="Eventos" />
-          <Typography size="small" weight="regular" className="text-gray-700 mt-2">
-            eventos
-          </Typography>
-        </Card>
-      </div>
+      {mercadoData.eventos && mercadoData.eventos.length > 0 && (
+        <div className="mb-6">
+          <EventCarousel cardsPerView={cardsPerView} autoScrollInterval={5000}>
+            {mercadoData.eventos.map((evento) => (
+              <EventCard
+                key={evento.id}
+                imageUrl={evento.imageUrl}
+                imageAlt={evento.imageAlt}
+                date={evento.date}
+                time={evento.time}
+                title={evento.title}
+                location={evento.location}
+              />
+            ))}
+          </EventCarousel>
+        </div>
+      )}
 
       {/* Map Card */}
       <div className="mb-6">
