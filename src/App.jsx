@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import MainPage from './pages/MainPage'
 import Mercado from './pages/Mercado'
+import TestPage from './pages/TestPage'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/test" element={<TestPage />} />
           <Route path="/mercado" element={<Mercado />} />
           <Route path="/mercados/:mercadoId" element={<Mercado />} />
         </Routes>
