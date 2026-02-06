@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TagHolder } from '../components/TagHolder';
 import { Typography } from '../components/Typography';
 import { Accordion } from '../components/Accordion';
@@ -7,6 +8,17 @@ import ArrowLeft from '../components/icons/ArrowLeft';
 import ArrowRight from '../components/icons/ArrowRight';
 
 export default function MainPage() {
+  const navigate = useNavigate();
+
+  // Função para converter nome do mercado em slug de URL
+  const createSlug = (text) => {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove acentos
+      .replace(/\s+/g, ''); // Remove espaços
+  };
+
   const tags = [
     { id: 1, text: 'Cultura', variant: 'primary' },
     { id: 2, text: 'Lazer', variant: 'primary' },
@@ -15,9 +27,24 @@ export default function MainPage() {
   ];
 
   const mercadosData = [
-    { id: 1, text: 'São José', imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png' },
-    { id: 2, text: 'Casa Amarela', imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png' },
-    { id: 3, text: 'Encruzilhada', imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png' },
+    { 
+      id: 1, 
+      text: 'São José', 
+      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      onClick: () => navigate('/mercados/saojose')
+    },
+    { 
+      id: 2, 
+      text: 'Casa Amarela', 
+      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      onClick: () => navigate('/mercados/casaamarela')
+    },
+    { 
+      id: 3, 
+      text: 'Encruzilhada', 
+      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      onClick: () => navigate('/mercados/encruzilhada')
+    },
   ];
 
   const feirasData = [

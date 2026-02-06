@@ -59,7 +59,7 @@ export default function MapCard({
   googleMapsLink,
   zoom = 16,
   withCard = true,
-  width = 'w-90',
+  width = 'w-80',
   height = 'h-58'
 }) {
   // Usa a posição do primeiro marcador como centro, ou Recife como padrão

@@ -6,18 +6,11 @@ import Mercado from './pages/Mercado'
 function App() {
   return (
     <BrowserRouter>
-      <div className="app-nav">
-        <nav>
-          <Link to="/">Home</Link>
-          <span style={{ margin: '0 8px' }}>|</span>
-          <Link to="/mercado">Mercado</Link>
-        </nav>
-      </div>
-
       <main>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/mercado" element={<Mercado />} />
+          <Route path="/mercados/:mercadoId" element={<Mercado />} />
         </Routes>
       </main>
     </BrowserRouter>
