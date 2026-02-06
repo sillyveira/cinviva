@@ -9,7 +9,7 @@ import imgCard from '../assets/imgCard.png'
  * Exibe informações sobre um evento com imagem, data, hora, título e local
  * @param {Object} props
  * @param {string} [props.imageUrl] - URL da imagem (padrão = imgCard)
- * @param {string} props.imageAlt - Texto alternativo para a imagem
+ * @param {string} [props.imageAlt] - Texto alternativo para a imagem (padrão = 'Imagem do evento')
  * @param {string} props.date - Data
  * @param {string} props.time - Horário
  * @param {string} props.title - Título
