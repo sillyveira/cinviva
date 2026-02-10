@@ -31,9 +31,9 @@ export default function Card({
         shadow-[0_3px_3px_rgba(0,0,0,0.2)]
         ${className}
         `}>
-            <div className="flex flex-col w-full min-w-0 h-full">
+            <div className="flex flex-col w-full min-w-0">
                 {React.Children.map(children, (child) => (
-                    <div className="mb-2 flex-1 min-h-0">
+                    <div className="mb-2">
                         {child}
                     </div>
                 ))}

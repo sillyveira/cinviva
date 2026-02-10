@@ -222,14 +222,14 @@ export default function Mercado() {
         <HighlightsCard highlists={mercadoData.destaques} />
       </div>
 
-      {/* Schedules */}
-      <div className="mb-6">
-        <Schedules schedules={mercadoData.horarios} />
-      </div>
-
-      {/* Item Sell */}
-      <div className="mb-6">
-        <ItemSell items={mercadoData.produtos} />
+      {/* Schedules + Item Sell: coluna no mobile, lado a lado no desktop */}
+      <div className="flex flex-col md:flex-row gap-6 mb-6 md:items-stretch">
+        <div className="w-full md:w-1/2 min-w-0">
+          <Schedules schedules={mercadoData.horarios} className="!max-w-full w-full h-full" />
+        </div>
+        <div className="w-full md:w-1/2 min-w-0">
+          <ItemSell items={mercadoData.produtos} className="!max-w-full w-full h-full" />
+        </div>
       </div>
 
       {/* Card de Eventos */}
