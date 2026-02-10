@@ -3,7 +3,7 @@ import Card from "../Card";
 import { IconTitle } from "../IconTitle";
 import { Book } from "../icons";
 
-export function History({ children }){
+export function History({ children, className = '' }){
     const [isExpanded, setIsExpanded] = useState(false);
     const [isTruncated, setIsTruncated] = useState(false);
     const textRef = useRef(null);
@@ -15,7 +15,7 @@ export function History({ children }){
     }, [children]);
 
     return(
-     <Card className="mt-4">
+     <Card className={`mt-4 ${className}`}>
         <IconTitle icon={Book} title="História"/>
         <div className="mt-4">
             <p 

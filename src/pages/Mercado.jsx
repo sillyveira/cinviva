@@ -36,6 +36,15 @@ const getMercadoData = (mercadoId) => {
         "Plantas Medicinais",
         "Reciclados Criativos",
         "Pães",
+        "Pescados",
+        "Produtos Locais",
+        "Alimentos Orgânicos",
+        "Artesanato Comunitário",
+        "Hortifruti Regional",
+        "Produtos Caseiros",
+        "Plantas Medicinais",
+        "Reciclados Criativos",
+        "Pães",
         "Pescados"
       ],
       mapa: {
@@ -251,19 +260,21 @@ export default function Mercado() {
         </div>
       )}
 
-      {/* Map Card */}
+      {/* Map Card - Full width */}
       <div className="mb-6">
         <MapCard
           markers={markers}
           googleMapsLink={mercadoData.mapa.googleMapsLink}
           zoom={16}
           withCard={true}
+          width="w-full"
+          className="w-full"
         />
       </div>
 
-      {/* History Card */}
+      {/* History Card - Full width */}
       <div className="mb-6">
-        <History>
+        <History className="!max-w-full w-full">
           {mercadoData.historia}
         </History>
       </div>
