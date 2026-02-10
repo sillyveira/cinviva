@@ -20,7 +20,7 @@ const getMercadoData = (mercadoId) => {
   const mercadosDatabase = {
     saojose: {
       nome: "Mercado São José",
-      descricao: "O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!",
+      descricao: "O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!",
       localizacao: "Praça Dom Vital, S/N - São José",
       imagemUrl: "http://placehold.co/335x142",
       horarios: [
@@ -198,19 +198,28 @@ export default function Mercado() {
         </div>
       </div>
 
-      {/* Imagem Arredondada */}
-      <img
-        src={mercadoData.imagemUrl}
-        alt={mercadoData.nome}
-        className="w-full max-h-[350px] h-auto rounded-3xl mb-6 shadow-md"
-      />
-
-      {/* Description Card */}
-      <div className="mb-6">
-        <DescriptionCard
-          description={mercadoData.descricao}
-          location={mercadoData.localizacao}
+      {/* Imagem + Description Card: coluna no mobile, lado a lado no desktop */}
+      <div className="flex flex-col md:flex-row-reverse gap-6 mb-6 md:max-h-[350px]">
+        {/* Imagem Arredondada */}
+        <img
+          src={mercadoData.imagemUrl}
+          alt={mercadoData.nome}
+          className="w-full md:w-1/2 max-h-[350px] md:h-full rounded-3xl shadow-md object-cover flex-shrink-0"
         />
+
+        {/* Description Card */}
+        <div className="w-full md:w-1/2 min-w-0">
+          <DescriptionCard
+            description={mercadoData.descricao}
+            location={mercadoData.localizacao}
+            className="!max-w-full w-full h-full"
+          />
+        </div>
+      </div>
+
+      {/* Highlights Card - Full width */}
+      <div className="mb-6 -mx-6 px-6 w-[calc(100%+3rem)]">
+        <HighlightsCard highlists={mercadoData.destaques} />
       </div>
 
       {/* Schedules */}
@@ -221,11 +230,6 @@ export default function Mercado() {
       {/* Item Sell */}
       <div className="mb-6">
         <ItemSell items={mercadoData.produtos} />
-      </div>
-
-      {/* Highlights Card - Full width */}
-      <div className="mb-6 -mx-6 px-6 w-[calc(100%+3rem)]">
-        <HighlightsCard highlists={mercadoData.destaques} />
       </div>
 
       {/* Card de Eventos */}
