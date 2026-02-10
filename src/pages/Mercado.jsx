@@ -55,6 +55,24 @@ const getMercadoData = (mercadoId) => {
           image: "https://placehold.co/100x100",
           description: "Pães frescos e artesanais",
           title: "Pães"
+        },
+        {
+          id: 3,
+          image: "https://placehold.co/100x100",
+          description: "Pães frescos e artesanais",
+          title: "Pães"
+        },
+        {
+          id: 4,
+          image: "https://placehold.co/100x100",
+          description: "Pães frescos e artesanais",
+          title: "Pães"
+        },
+        {
+          id: 5,
+          image: "https://placehold.co/100x100",
+          description: "Pães frescos e artesanais",
+          title: "Pães"
         }
       ],
       eventos: [
@@ -161,7 +179,7 @@ export default function Mercado() {
   return (
     <div className="bg-white min-h-screen p-6">
       {/* Botão Voltar */}
-      <button 
+      <button
         onClick={() => navigate('/')}
         className="flex items-center gap-2 text-primary-default bg-transparent border-none outline-none hover:opacity-80 transition-opacity mb-4 cursor-pointer"
       >
@@ -175,13 +193,13 @@ export default function Mercado() {
       <div className="flex justify-center mb-4">
         <div className="bg-primary-default rounded-full px-6 py-3 inline-block w-full text-center">
           <Typography size="body" weight="bold" className="text-white">
-        {mercadoData.nome}
+            {mercadoData.nome}
           </Typography>
         </div>
       </div>
 
       {/* Imagem Arredondada */}
-      <img 
+      <img
         src={mercadoData.imagemUrl}
         alt={mercadoData.nome}
         className="w-full max-h-[350px] h-auto rounded-3xl mb-6 shadow-md"
@@ -189,7 +207,7 @@ export default function Mercado() {
 
       {/* Description Card */}
       <div className="mb-6">
-        <DescriptionCard 
+        <DescriptionCard
           description={mercadoData.descricao}
           location={mercadoData.localizacao}
         />
@@ -205,8 +223,8 @@ export default function Mercado() {
         <ItemSell items={mercadoData.produtos} />
       </div>
 
-      {/* Highlights Card */}
-      <div className="mb-6">
+      {/* Highlights Card - Full width */}
+      <div className="mb-6 -mx-6 px-6 w-[calc(100%+3rem)]">
         <HighlightsCard highlists={mercadoData.destaques} />
       </div>
 
@@ -231,7 +249,7 @@ export default function Mercado() {
 
       {/* Map Card */}
       <div className="mb-6">
-        <MapCard 
+        <MapCard
           markers={markers}
           googleMapsLink={mercadoData.mapa.googleMapsLink}
           zoom={16}
