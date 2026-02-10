@@ -15,10 +15,10 @@ import PropTypes from "prop-types";
  * @param {string} [props.classname] - Classes extras
  */
 
-export default function Card({ 
-    children, 
-    className=''
-}){
+export default function Card({
+    children,
+    className = ''
+}) {
 
     return (
         <div className={`
@@ -31,7 +31,7 @@ export default function Card({
         shadow-[0_3px_3px_rgba(0,0,0,0.2)]
         ${className}
         `}>
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full min-w-0">
                 {React.Children.map(children, (child) => (
                     <div className="mb-2">
                         {child}
@@ -46,10 +46,10 @@ Card.PropTypes = {
     children: (props, propName, componentName) => {
         const count = React.Children.count(props[propName]);
 
-        if(count === 0) {
+        if (count === 0) {
             return new Error(`${componentName} precisa de ao menos um componente para renderizar.`);
         }
-        if(count > 3){
+        if (count > 3) {
             return new Error(`${componentName} aceita no máximo três componentes para renderizar.`);
         }
     },

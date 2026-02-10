@@ -77,8 +77,8 @@ export default function EventCarousel({
         )}
 
         {/* Container dos cards */}
-        <div className="w-full overflow-hidden rounded-lg h-105">
-          <div className="flex gap-4 h-full">
+        <div className="w-full overflow-hidden rounded-lg">
+          <div className="flex gap-4">
             {/* Renderiza cada card */}
             {currentCards.map((card, idx) => (
               <div
@@ -87,7 +87,7 @@ export default function EventCarousel({
                   // Largura = (100% - gaps) ÷ número de cards
                   width: `calc((100% - ${(currentCards.length - 1) * 16}px) / ${currentCards.length})`,
                 }}
-                className="shrink-0 h-full"
+                className="shrink-0"
               >
                 {card}
               </div>

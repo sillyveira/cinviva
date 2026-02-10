@@ -33,8 +33,8 @@ export default function MapMarkers({ markers = [] }) {
           title={marker.title} 
           position={marker.position}
         >
-          <Popup>
-            <div className="flex flex-col gap-2 max-w-xs">
+          <Popup maxWidth={280} maxHeight={200}>
+            <div className="flex flex-col gap-2 max-w-xs overflow-y-auto" style={{ maxHeight: '180px' }}>
               <Typography tag="h4" weight="medium" size="small">
                 {marker.title}
               </Typography>
