@@ -15,13 +15,16 @@ import PropTypes from "prop-types";
  * @param {string} [props.classname] - Classes extras
  */
 
-export default function Card({ 
+const Card = React.forwardRef(({ 
     children, 
     className=''
-}){
+}, ref) => {
 
     return (
-        <div className={`
+        <div 
+            ref={ref}
+            className={`
+        relative
         flex grow justify-start 
         border border-[#6C707880] rounded-2xl 
         px-4 pt-2 pb-1 
@@ -40,7 +43,9 @@ export default function Card({
             </div>
         </div>
     )
-}
+})
+
+Card.displayName = 'Card';
 
 Card.PropTypes = {
     children: (props, propName, componentName) => {
@@ -55,3 +60,5 @@ Card.PropTypes = {
     },
     className: PropTypes.string,
 };
+
+export default Card;

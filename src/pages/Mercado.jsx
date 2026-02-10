@@ -20,7 +20,7 @@ const getMercadoData = (mercadoId) => {
   const mercadosDatabase = {
     saojose: {
       nome: "Mercado São José",
-      descricao: "O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!",
+      descricao: " O Mercado de São José é um dos principais centrosO Mercado de O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!é reunir tudo em um só lugar!",
       localizacao: "Praça Dom Vital, S/N - São José",
       imagemUrl: "http://placehold.co/335x142",
       horarios: [
@@ -180,19 +180,20 @@ export default function Mercado() {
         </div>
       </div>
 
-      {/* Imagem Arredondada */}
-      <img 
-        src={mercadoData.imagemUrl}
-        alt={mercadoData.nome}
-        className="w-full max-h-[350px] h-auto rounded-3xl mb-6 shadow-md"
-      />
-
-      {/* Description Card */}
-      <div className="mb-6">
-        <DescriptionCard 
-          description={mercadoData.descricao}
-          location={mercadoData.localizacao}
+      <div className='xl:flex flex-row-reverse justify-between'>
+        {/* Imagem Arredondada */}
+        <img 
+          src={mercadoData.imagemUrl}
+          alt={mercadoData.nome}
+          className="w-full max-h-[350px] h-auto rounded-3xl mb-6 shadow-md xl:w-[49%]"
         />
+
+        {/* Description Card */}
+          <DescriptionCard 
+            description={mercadoData.descricao}
+            location={mercadoData.localizacao}
+            className="mb-6 xl:h-min xl:max-h-[350px] xl:!max-w-[49%] overflow-y-auto"
+          />
       </div>
 
       {/* Schedules */}
