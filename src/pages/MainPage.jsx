@@ -30,21 +30,52 @@ export default function MainPage() {
     { 
       id: 1, 
       text: 'São José', 
-      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      imageSrc: 'https://mercadosempe.com/wp-content/uploads/2022/06/001-mercadosempe-saojose-1024x683.jpg',
       onClick: () => navigate('/mercados/saojose')
     },
     { 
       id: 2, 
       text: 'Casa Amarela', 
-      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      imageSrc: 'https://mercadosempe.com/wp-content/uploads/2022/06/001-mercadosempe-casa-amarela-1024x683.jpg',
       onClick: () => navigate('/mercados/casaamarela')
     },
     { 
       id: 3, 
       text: 'Encruzilhada', 
-      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      imageSrc: 'https://mercadosempe.com/wp-content/uploads/2023/01/img-realizacao.jpg',
       onClick: () => navigate('/mercados/encruzilhada')
     },
+    { 
+      id: 5, 
+      text: 'Beberibe', 
+      imageSrc: 'https://conexaope.com.br/wp-content/uploads/2025/02/IMG_1149-780x470.jpeg',
+      onClick: () => navigate('/mercados/beberibe')
+    },
+    { 
+      id: 6, 
+      text: 'Nova Descoberta', 
+      imageSrc: 'http://observatoriogastronomico.senac.br/wp-content/uploads/2019/10/1-600x450.jpg',
+      onClick: () => navigate('/mercados/novadescoberta')
+    },
+    { 
+      id: 7, 
+      text: 'Boa Vista', 
+      imageSrc: 'https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2023/04/mercado-da-boa-vista-foto-ed-machado-01.jpg',
+      onClick: () => navigate('/mercados/boavista')
+    },
+    { 
+      id: 8, 
+      text: 'Madalena', 
+      imageSrc: 'https://mercadosempe.com/wp-content/uploads/2022/06/002-mercadosempe-madalena.jpg',
+      onClick: () => navigate('/mercados/madalena')
+    },
+    { 
+      id: 9, 
+      text: 'Cordeiro', 
+      imageSrc: 'https://www.diariodepernambuco.com.br/static/app/noticia_127983242361/2022/03/21/889454/20220321164310439876i.jpg',
+      onClick: () => navigate('/mercados/cordeiro')
+    }
+
   ];
 
   const feirasData = [
