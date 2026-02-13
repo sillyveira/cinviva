@@ -53,12 +53,12 @@ export default function MapCard({
 
   return (
     <div
-      className="flex flex-col w-fit justify-start 
+      className="flex flex-col w-full justify-start 
         border border-[#6C707880] rounded-2xl 
         px-4 pt-2 pb-1 mr-2 shadow-xl gap-3"
     >
       <IconTitle icon={MapPin} title={"Localização"} />
-      <div className="h-58 w-90 rounded-lg overflow-hidden">
+      <div className="h-80 w-full rounded-lg overflow-hidden">
         <MapContainer
           center={center}
           zoom={zoom}
