@@ -17,6 +17,7 @@ export function IconTitle({
   color = "text-primary-default",
   weight = "medium",
   size = "body",
+  textClassname = "text-gray-800",
   iconSize,
   className = ""
   // Adicionei novos props para conseguir personalizar o tamanho do título. 
@@ -34,7 +35,7 @@ export function IconTitle({
         {/* Fiz o tamanho do ícone ser customizável, mas só funciona pro ícone de tag. */}
       </div>
 {/* text-body font-medium */}
-        <Typography tag={tag} weight={weight} size={size} className={`text-gray-800`}>
+        <Typography tag={tag} weight={weight} size={size} className={`${textClassname}`}>
           {/* Fazer aceitar o tamanho do título!! */}
           {title}
         </Typography>
