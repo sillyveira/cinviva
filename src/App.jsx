@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import MainPage from './pages/MainPage'
 import Mercado from './pages/Mercado'
+import MainDesktop from './pages/MainDesktop'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path='/desktop' element={<MainDesktop/>}/>
           <Route path="/mercado" element={<Mercado />} />
         </Routes>
       </main>
