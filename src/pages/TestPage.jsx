@@ -26,8 +26,8 @@ import {
 import Card from '../components/Card';
 import { Accordion } from '../components/Accordion'
 import HighlightsCard from '../components/HighlightsCard';
-import Bolo from '../assets/boloderolo.png'
-import Charque from '../assets/charque.jpg'
+import Bolo from '../assets/Destaques/boloDeRoloImg.png'
+import Charque from '../assets/Destaques/charqueImg.jpg'
 
 const mockHighlights = [
     {id: 1, image: Bolo, description: "Doce tradicional pernambucano, feito artesanalmente e muito procurado no mercado.", icon: Tag, title: "Bolo de rolo", size: "xsmall"},
