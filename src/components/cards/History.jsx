@@ -6,13 +6,24 @@ import { Book } from "../icons";
 export function History({ children }){
     const [isExpanded, setIsExpanded] = useState(false);
     const [isTruncated, setIsTruncated] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const textRef = useRef(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         if (textRef.current) {
             setIsTruncated(textRef.current.scrollHeight > textRef.current.clientHeight);
         }
-    }, [children]);
+    }, [children, isMobile]);
+
+    const lineClampLimit = isExpanded ? 'unset' : (isMobile ? 4 : 5);
 
     return(
      <Card className="mt-4">
@@ -23,7 +34,7 @@ export function History({ children }){
                 className="m-0 leading-relaxed"
                 style={{
                     display: '-webkit-box',
-                    WebkitLineClamp: isExpanded ? 'unset' : 5,
+                    WebkitLineClamp: lineClampLimit,
                     WebkitBoxOrient: 'vertical',
                     overflow: 'hidden'
                 }}

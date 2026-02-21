@@ -59,8 +59,8 @@ export default function MapCard({
   googleMapsLink,
   zoom = 16,
   withCard = true,
-  width = 'w-80',
-  height = 'h-58'
+  width = 'w-full',
+  height = 'h-96'
 }) {
   // Usa a posição do primeiro marcador como centro, ou Recife como padrão
   const defaultCenter = [-8.0476, -34.877];
@@ -92,11 +92,13 @@ export default function MapCard({
   // Com card (comportamento padrão)
   return (
     <div
-      className="flex flex-col w-fit justify-start 
+      className="flex flex-col w-full justify-start 
         border border-[#6C707880] rounded-2xl 
-        px-4 pt-2 pb-1 mr-2 shadow-xl gap-3"
+        px-4 pt-2 pb-1 shadow-xl gap-3"
     >
-      <IconTitle icon={MapPin} title={"Localização"} />
+      <div className="mb-4">
+        <IconTitle icon={MapPin} title={"Localização"} />
+      </div>
       {mapElement}
       {googleMapsLink && (
         <a 

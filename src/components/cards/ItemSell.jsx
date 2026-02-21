@@ -6,7 +6,9 @@ import { TagHolder } from '../TagHolder/'
 export function ItemSell({ items = [] }){
     return(
      <Card>
-        <IconTitle icon={ShoppingBag} title="O que é vendido"/>
+        <div className="mb-4">
+          <IconTitle icon={ShoppingBag} title="O que é vendido"/>
+        </div>
         <TagHolder
             tags={items.map(item => ({ text: item }))} 
         />

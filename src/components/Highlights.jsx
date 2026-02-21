@@ -19,23 +19,28 @@ export default function Highlights({image, children, description, alt}){
     return (
         <div className="
         flex flex-row shrink-0
-        max-w-full h-max-min
-        py-1 px-2
-        max-sm:max-w-13/16
-        md:max-w-2/5 lg:max-w-5/7 
-        shadow-[4px_0px_8px_rgba(0,0,0,0.1)]
-        gap-3 rounded-2xl
-        mt-2 mb-2 ml-1 mr-2
+        w-full
+        p-2 md:p-2.5
+        rounded-2xl
+        border border-gray-200
+        hover:shadow-md transition-shadow
+        gap-2 md:gap-2.5
         ">
-            {/* Letras pequenas em desktop. Resolver durante desenvolvimento para versão desktop */}
-            <div className="flex justify-center w-1/2 py-1">
-                <img className="border-2 rounded-[3.1px] border-[#1474FF] h-full w-full" 
-                src={image}
-                alt={alt ? alt : ""} />
+            {/* Imagem */}
+            <div className="flex justify-center w-20 md:w-20 h-20 shrink-0">
+                <img 
+                    className="border-2 rounded-lg border-primary-default h-20 w-20 object-cover" 
+                    src={image}
+                    alt={alt ? alt : ""} 
+                />
             </div>
-            <div className="flex flex-col mb-2 text-[#464E5C] w-1/2 text-[10px]">
+            
+            {/* Conteúdo - Descrição e Título */}
+            <div className="flex flex-col gap-1 w-full text-gray-700 text-xs md:text-xs">
                 {children}
-                {description}
+                <p className="text-xs text-gray-600 leading-relaxed line-clamp-2">
+                    {description}
+                </p>
             </div>
         </div>
     )
