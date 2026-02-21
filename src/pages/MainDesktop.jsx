@@ -30,11 +30,11 @@ const mercadosData = [
 export default function MainDesktop(){
 
     return (
-        <div className="px-8 flex flex-col gap-4">
-            <div className="flex flex-row">
-                <div className="max-w-1/2 text flex flex-col">
-                    <img src={Logo} alt="Logo do conviva" width={500}/>
-                    <div className=" flex flex-col gap-2">
+        <div className="px-28 flex flex-col gap-9">
+            <div className="flex flex-row gap-30">
+                <div className="max-w-1/2 flex flex-col">
+                    <img src={Logo} alt="Logo do conviva" width={500} className="-ml-8"/>
+                    <div className="flex flex-col gap-2 ml-2">
                         <TagHolder tags={tags}/>
                         <Typography tag={'p'} size={'medium'} weight={'regular'}>
                             {description}
@@ -47,7 +47,7 @@ export default function MainDesktop(){
                     </div>
                 </div>
 
-                <div className="flex flex-col w-1/2 gap-1">
+                <div className="flex flex-col w-1/2 gap-1 mt-8">
                     <Typography tag={'h3'} size={'display'} weight={'regular'}>
                         Mercados
                     </Typography>
@@ -69,7 +69,7 @@ export default function MainDesktop(){
                 <Typography tag={'h2'} size={'display'} weight={'regular'}>
                     Mapa
                 </Typography>
-                <MapCard/>
+                <MapCard width='w-full' height='h-80'/>
                 <a href="">
                 <IconTitle
                 title="Ver o mapa do Recife" 
