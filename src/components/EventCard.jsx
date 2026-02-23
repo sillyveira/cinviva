@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from './Typography'
 import PropTypes from 'prop-types'
-import imgCard from '../assets/imgCard.png'
+import imgCard from '../assets/Eventos/imgCard.png'
 
 
 /**
@@ -38,7 +38,6 @@ export default function EventCard({
                 flex-col 
                 w-full 
                 h-full
-                max-w-sm
                 border border-[#6C707880] 
                 rounded-2xl 
                 overflow-hidden

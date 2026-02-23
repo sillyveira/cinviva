@@ -4,16 +4,18 @@ import { Typography } from '../Typography'
 import { MapPin } from '../icons'
 
 export default function DescriptionCard({
-    description = "",
-    location = ""
+  description = "",
+  location = "",
+  className = ""
 }
 ) {
   return (
-    <Card>
+    <Card className={className}>
+      <div className="md:max-h-[280px] md:overflow-y-auto">
         <Typography tag={"p"} size={"medium"} weight={"regular"}>
-            {description}
+          {description}
         </Typography>
-        <div className='flex flex-row gap-2 items-center'>
+        <div className='flex flex-row gap-2 items-center border-t border-gray-100 pt-2'>
             <MapPin />
             <Typography tag={"p"} size={"medium"} weight={"regular"} className="text-gray-500">
             {location}

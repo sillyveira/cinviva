@@ -1,21 +1,32 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Card from "../Card";
 import { IconTitle } from "../IconTitle";
 import { Book } from "../icons";
 
-export function History({ children }){
+export function History({ children, className = '' }){
     const [isExpanded, setIsExpanded] = useState(false);
     const [isTruncated, setIsTruncated] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const textRef = useRef(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         if (textRef.current) {
             setIsTruncated(textRef.current.scrollHeight > textRef.current.clientHeight);
         }
-    }, [children]);
+    }, [children, isMobile]);
+
+    const lineClampLimit = isExpanded ? 'unset' : (isMobile ? 4 : 5);
 
     return(
-     <Card className="mt-4">
+     <Card className={`mt-4 ${className}`}>
         <IconTitle icon={Book} title="História"/>
         <div className="mt-4">
             <p 
@@ -23,14 +34,14 @@ export function History({ children }){
                 className="m-0 leading-relaxed"
                 style={{
                     display: '-webkit-box',
-                    WebkitLineClamp: isExpanded ? 'unset' : 5,
+                    WebkitLineClamp: lineClampLimit,
                     WebkitBoxOrient: 'vertical',
                     overflow: 'hidden'
                 }}
             >
                 {children}
             </p>
-            {isTruncated && (
+            {needsTruncation && (
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
                     className="bg-transparent border-none text-primary-default cursor-pointer py-2 px-0 text-sm mt-2 font-bold hover:underline"

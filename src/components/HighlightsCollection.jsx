@@ -12,7 +12,7 @@ import ArrowRight from "./icons/ArrowRight";
  * @returns 
  */
 
-export default function HighlightsCollection({highlists}){
+export default function HighlightsCollection({ highlists }) {
     const highlistSize = highlists.length;
     const scrollContainerRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -53,7 +53,7 @@ export default function HighlightsCollection({highlists}){
     };
 
     return (
-        <div className="relative">
+        <div className="relative w-full min-w-0">
             {/* Seta Esquerda */}
             {canScrollLeft && highlistSize > 1 && (
                 <button
@@ -72,16 +72,16 @@ export default function HighlightsCollection({highlists}){
                 ${highlistSize === 1 ? 'justify-center' : 'justify-start'} 
                 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2`}
             >
-                {highlists.map((highlight)=> (
+                {highlists.map((highlight) => (
                     <Highlights
                         key={highlight.id}
                         image={highlight.image}
                         description={highlight.description}
                     >
-                        <IconTitle 
-                            icon={highlight.icon} 
-                            title={highlight.title} 
-                            className='flex-row-reverse justify-between' 
+                        <IconTitle
+                            icon={highlight.icon}
+                            title={highlight.title}
+                            className='flex-row-reverse justify-between'
                             size="wrap"
                             iconSize="18"
                         />
