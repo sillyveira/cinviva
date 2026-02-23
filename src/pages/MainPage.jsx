@@ -7,6 +7,16 @@ import MapCard from '../components/cards/MapCard';
 import ArrowLeft from '../components/icons/ArrowLeft';
 import ArrowRight from '../components/icons/ArrowRight';
 
+// Importações de Imagens de Mercados
+import mercadoSaoJoseImg from '../assets/Mercados/mercadoSaoJoseImg.jpg';
+import mercadoCasaAmarelaImg from '../assets/Mercados/mercadoCasaAmarelaImg.jpg';
+import mercadoEncruzilhadaImg from '../assets/Mercados/mercadoEncruzilhadaImg.jpg';
+import mercadoBeberibeImg from '../assets/Mercados/mercadoBeberibeImg.jpeg';
+import mercadoNovaDescobertaImg from '../assets/Mercados/mercadoNovaDescobertaImg.webp';
+import mercadoBoaVistaImg from '../assets/Mercados/mercadoBoaVistaImg.jpg';
+import mercadoMadalenaImg from '../assets/Mercados/mercadoMadalena.jpg';
+import mercadoCordeiroImg from '../assets/Mercados/mercadoCordeiroImg.jpg';
+
 export default function MainPage() {
   const navigate = useNavigate();
 
@@ -30,21 +40,52 @@ export default function MainPage() {
     { 
       id: 1, 
       text: 'São José', 
-      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      imageSrc: mercadoSaoJoseImg,
       onClick: () => navigate('/mercados/saojose')
     },
     { 
       id: 2, 
       text: 'Casa Amarela', 
-      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      imageSrc: mercadoCasaAmarelaImg,
       onClick: () => navigate('/mercados/casaamarela')
     },
     { 
       id: 3, 
       text: 'Encruzilhada', 
-      imageSrc: 'https://annoyingthing.net/images/e/eb/Crazy_Frog_Standing.png',
+      imageSrc: mercadoEncruzilhadaImg,
       onClick: () => navigate('/mercados/encruzilhada')
     },
+    { 
+      id: 5, 
+      text: 'Beberibe', 
+      imageSrc: mercadoBeberibeImg,
+      onClick: () => navigate('/mercados/beberibe')
+    },
+    { 
+      id: 6, 
+      text: 'Nova Descoberta', 
+      imageSrc: mercadoNovaDescobertaImg,
+      onClick: () => navigate('/mercados/novadescoberta')
+    },
+    { 
+      id: 7, 
+      text: 'Boa Vista', 
+      imageSrc: mercadoBoaVistaImg,
+      onClick: () => navigate('/mercados/boavista')
+    },
+    { 
+      id: 8, 
+      text: 'Madalena', 
+      imageSrc: mercadoMadalenaImg,
+      onClick: () => navigate('/mercados/madalena')
+    },
+    { 
+      id: 9, 
+      text: 'Cordeiro', 
+      imageSrc: mercadoCordeiroImg,
+      onClick: () => navigate('/mercados/cordeiro')
+    }
+
   ];
 
   const feirasData = [
@@ -116,8 +157,8 @@ export default function MainPage() {
 
       {/* Imagem Placeholder */}
       <img 
-        src="https://placehold.co/346x221" 
-        alt="Placeholder" 
+        src="/convivaLogo.png" 
+        alt="Logo Conviva" 
         className="w-full max-w-[346px] h-auto rounded-lg mb-4"
       />
 
