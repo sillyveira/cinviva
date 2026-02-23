@@ -1105,10 +1105,9 @@ export default function Mercado() {
           <DescriptionCard
             description={mercadoData.descricao}
             location={mercadoData.localizacao}
-            className="!max-w-full w-full h-full"
+            className="max-w-full! w-full h-full"
           />
         </div>
-      </div>
 
         {/* SEÇÃO: Horários e Destaques */}
         <div className="mb-8 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
@@ -1158,16 +1157,12 @@ export default function Mercado() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="w-full md:w-1/2 min-w-0">
-          <ItemSell items={mercadoData.produtos} className="!max-w-full w-full h-full" />
-        </div>
       </div>
 
-        {/* O que é vendido */}
-        <div className="mb-8 md:mb-12">
-          <ItemSell items={mercadoData.produtos} />
-        </div>
+      {/* O que é vendido */}
+      <div className="mb-8 md:mb-12">
+        <ItemSell items={mercadoData.produtos} />
+      </div>
 
         {/* Card de Eventos */}
         {mercadoData.eventos && mercadoData.eventos.length > 0 && (
@@ -1204,7 +1199,6 @@ export default function Mercado() {
             width="w-full"
           />
         </div>
-      )}
 
         {/* History Card */}
         <div>

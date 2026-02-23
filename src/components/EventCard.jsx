@@ -51,7 +51,7 @@ export default function EventCard({
         >
             {/* Container da imagem */}
             {imageUrl && (
-                <div className="w-full h-48 sm:h-56 flex-shrink-0 overflow-hidden">
+                <div className="w-full h-48 sm:h-56 shrink-0 overflow-hidden">
                     <img
                         src={imageUrl}
                         alt={imageAlt}
@@ -66,7 +66,7 @@ export default function EventCard({
             )}
 
             {/* Container do conteúdo */}
-            <div className="flex flex-col gap-1 px-4 py-3 flex-grow">
+            <div className="flex flex-col gap-1 px-4 py-3 grow">
                 {/* Data e Hora */}
                 <div className="flex flex-row gap-1 items-center">
                     <Typography
@@ -110,7 +110,7 @@ export default function EventCard({
             </div>
 
             {/* Barra azul na parte inferior */}
-            <div className="h-1 bg-blue-600 flex-shrink-0"></div>
+            <div className="h-1 bg-blue-600 shrink-0"></div>
         </div>
     )
 }

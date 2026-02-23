@@ -21,6 +21,7 @@ export default function DescriptionCard({
             {location}
             </Typography>
         </div>
+      </div>
     </Card>
   )
 }
