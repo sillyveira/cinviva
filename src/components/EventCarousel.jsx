@@ -91,7 +91,7 @@ export default function EventCarousel({
                   // Largura = (100% - gaps) ÷ número de cards
                   width: `calc((100% - ${(currentCards.length - 1) * 16}px) / ${currentCards.length})`,
                 }}
-                className="shrink-0 h-full"
+                className="shrink-0"
               >
                 {card}
               </div>

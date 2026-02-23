@@ -50,7 +50,7 @@ const getMercadoData = (mercadoId) => {
   const mercadosDatabase = {
     saojose: {
       nome: "Mercado São José",
-      descricao: "O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!",
+      descricao: "O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar! O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!",
       localizacao: "Praça Dom Vital, S/N - São José",
       imagemUrl: mercadoSaoJoseImg,
       horarios: [
@@ -1105,8 +1105,10 @@ export default function Mercado() {
           <DescriptionCard
             description={mercadoData.descricao}
             location={mercadoData.localizacao}
+            className="!max-w-full w-full h-full"
           />
         </div>
+      </div>
 
         {/* SEÇÃO: Horários e Destaques */}
         <div className="mb-8 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
@@ -1157,6 +1159,10 @@ export default function Mercado() {
             </div>
           </div>
         </div>
+        <div className="w-full md:w-1/2 min-w-0">
+          <ItemSell items={mercadoData.produtos} className="!max-w-full w-full h-full" />
+        </div>
+      </div>
 
         {/* O que é vendido */}
         <div className="mb-8 md:mb-12">
@@ -1198,6 +1204,7 @@ export default function Mercado() {
             width="w-full"
           />
         </div>
+      )}
 
         {/* History Card */}
         <div>

@@ -1,9 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Card from "../Card";
 import { IconTitle } from "../IconTitle";
 import { Book } from "../icons";
 
-export function History({ children }){
+export function History({ children, className = '' }){
     const [isExpanded, setIsExpanded] = useState(false);
     const [isTruncated, setIsTruncated] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -26,7 +26,7 @@ export function History({ children }){
     const lineClampLimit = isExpanded ? 'unset' : (isMobile ? 4 : 5);
 
     return(
-     <Card className="mt-4">
+     <Card className={`mt-4 ${className}`}>
         <IconTitle icon={Book} title="História"/>
         <div className="mt-4">
             <p 
@@ -41,7 +41,7 @@ export function History({ children }){
             >
                 {children}
             </p>
-            {isTruncated && (
+            {needsTruncation && (
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
                     className="bg-transparent border-none text-primary-default cursor-pointer py-2 px-0 text-sm mt-2 font-bold hover:underline"

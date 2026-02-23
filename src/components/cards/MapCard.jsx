@@ -131,4 +131,5 @@ MapCard.propTypes = {
   withCard: PropTypes.bool,
   width: PropTypes.string,
   height: PropTypes.string,
+  className: PropTypes.string,
 };
