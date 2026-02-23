@@ -6,10 +6,11 @@ import DescriptionCard from '../components/cards/DescriptionCard';
 import { ItemSell } from '../components/cards/ItemSell';
 import { History } from '../components/cards/History';
 import HighlightsCard from '../components/HighlightsCard';
+import Highlights from '../components/Highlights';
 import Card from '../components/Card';
 import { Typography } from '../components/Typography';
 import { IconTitle } from '../components/IconTitle';
-import { Calendar } from '../components/icons';
+import { Calendar, Star } from '../components/icons';
 import ArrowLeft from '../components/icons/ArrowLeft';
 import EventCard from '../components/EventCard';
 import EventCarousel from '../components/EventCarousel';
@@ -53,13 +54,13 @@ const getMercadoData = (mercadoId) => {
       localizacao: "Praça Dom Vital, S/N - São José",
       imagemUrl: mercadoSaoJoseImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo e Feriados", time: "06:00 - 13:00", isSpecial: true }
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true }
       ],
       produtos: [
         "Produtos Locais",
@@ -163,15 +164,14 @@ const getMercadoData = (mercadoId) => {
       localizacao: "Rua Padre Lemos, 94 - Casa Amarela",
       imagemUrl: mercadoCasaAmarelaImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo", time: "06:00 - 13:00", isSpecial: false },
-        { day: "Feriados", time: "06:00 - 13:00", isSpecial: true },
-        { day: "Praça de alimentação", time: "Aberto após 18h", isSpecial: true }
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true },
+        { day: "Praça de alimentação", time: "Após 18h", isSpecial: true }
       ],
       produtos: [
         "Bolsas e Sapatos",
@@ -281,15 +281,14 @@ const getMercadoData = (mercadoId) => {
       localizacao: "Rua Doutor José Maria, 2-200 - Encruzilhada",
       imagemUrl: mercadoEncruzilhadaImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo", time: "06:00 - 13:00", isSpecial: false },
-        { day: "Feriados", time: "06:00 - 13:00", isSpecial: true },
-        { day: "Praça de alimentação", time: "Aberto após 18h", isSpecial: true }
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true },
+        { day: "Praça de alimentação", time: "Após 18h", isSpecial: true }
       ],
       produtos: [
         "Produtos Locais",
@@ -417,13 +416,13 @@ const getMercadoData = (mercadoId) => {
       localizacao: "Praça da Convenção, nº 128, Beberibe",
       imagemUrl: mercadoBeberibeImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo e Feriados", time: "06:00 - 13:00", isSpecial: true },
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true }
       ],
       produtos: [
         "Bolsas e Sapatos",
@@ -450,24 +449,18 @@ const getMercadoData = (mercadoId) => {
         },
         {
           id: 2,
-          image: consertoDeCelularesImg,
-          description: "Manutenção básica, troca de tela, bateria e conectores.",
-          title: "Conserto de Celulares"
-        },
-        {
-          id: 3,
           image: consertoDeeletronicosImg,
           description: "Reparos em aparelhos eletrônicos do dia a dia.",
           title: "Conserto de Eletrônicos"
         },
         {
-          id: 4,
+          id: 3,
           image: consertoDeOculosImg,
           description: "Venda e ajuste de óculos, lentes e acessórios ópticos.",
           title: "Óticas"
         },
         {
-          id: 5,
+          id: 4,
           image: floriculturaImg,
           description: "Venda de flores, plantas e arranjos decorativos.",
           title: "Floricultura"
@@ -545,13 +538,13 @@ const getMercadoData = (mercadoId) => {
       localizacao: " Av. Ver. Otacílio Azevedo, 2311 - Vasco da Gama",
       imagemUrl: mercadoNovaDescobertaImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo e Feriados", time: "06:00 - 13:00", isSpecial: true },
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true }
       ],
       produtos: [
         "Bolsas e Sapatos",
@@ -593,12 +586,6 @@ const getMercadoData = (mercadoId) => {
           image: frigorificoImg,
           description: "Venda de carnes frescas, cortes variados e produtos refrigerados.",
           title: "Frigorífico"
-        },
-        {
-          id: 5,
-          image: lanchonetesImg,
-          description: "Lanches rápidos, refeições simples e bebidas para o dia a dia.",
-          title: "Lanchonetes"
         }
       ],
       eventos: [
@@ -673,15 +660,14 @@ const getMercadoData = (mercadoId) => {
       localizacao: "Rua Santa Cruz, S/N - Boa Vista",
       imagemUrl: mercadoBoaVistaImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo", time: "06:00 - 13:00", isSpecial: false },
-        { day: "Feriados", time: "06:00 - 13:00", isSpecial: true },
-        { day: "Praça de alimentação", time: "Aberto após 18h", isSpecial: true },
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true },
+        { day: "Praça de alimentação", time: "Após 18h", isSpecial: true },
       ],
       produtos: [
         "Bebidas",
@@ -797,15 +783,14 @@ const getMercadoData = (mercadoId) => {
       localizacao: "Rua Real da Torre, 521 - Madalena",
       imagemUrl: mercadoMadalenaImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo", time: "06:00 - 13:00", isSpecial: false },
-        { day: "Feriados", time: "06:00 - 13:00", isSpecial: true },
-        { day: "Praça de alimentação", time: "Aberto após 18h", isSpecial: true },
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true },
+        { day: "Praça de alimentação", time: "Após 18h", isSpecial: true },
       ],
       produtos: [
         "Bebidas",
@@ -933,15 +918,14 @@ const getMercadoData = (mercadoId) => {
       localizacao: "Avenida General San Martin, S/N - Cordeiro",
       imagemUrl: mercadoCordeiroImg,
       horarios: [
-        { day: "Segunda-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Terça-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quarta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Quinta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sexta-feira", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Sábado", time: "06:00 - 18:00", isSpecial: false },
-        { day: "Domingo", time: "06:00 - 13:00", isSpecial: false },
-        { day: "Feriados", time: "06:00 - 13:00", isSpecial: true },
-        { day: "Praça de alimentação", time: "Aberto após 18h", isSpecial: true },
+        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
+        { day: "Sábado", time: "06h - 18h", isSpecial: false },
+        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true },
+        { day: "Praça de alimentação", time: "Após 18h", isSpecial: true },
       ],
       produtos: [
         "Bebidas",
@@ -1082,28 +1066,21 @@ export default function Mercado() {
   ];
 
   return (
-    <div className="bg-white min-h-screen p-6">
-      {/* Botão Voltar */}
-      <button
-        onClick={() => navigate('/')}
-        className="flex items-center gap-2 text-primary-default bg-transparent border-none outline-none hover:opacity-80 transition-opacity mb-4 cursor-pointer"
-      >
-        <ArrowLeft />
-        <Typography size="body" weight="medium" className="text-primary-default">
-          Voltar
-        </Typography>
-      </button>
-
-      {/* Título em Retângulo Azul Arredondado */}
-      <div className="flex justify-center mb-4">
-        <div className="bg-primary-default rounded-full px-6 py-3 inline-block w-full text-center">
-          <Typography size="body" weight="bold" className="text-white">
-            {mercadoData.nome}
+    <div className="bg-white min-h-screen px-4 py-6 md:px-8 lg:px-0">
+      <div className="w-full md:max-w-6xl md:mx-auto">
+        {/* Botão Voltar */}
+        <button
+          onClick={() => navigate('/')}
+          className="flex items-center gap-2 text-primary-default bg-transparent border-none outline-none hover:opacity-80 transition-opacity mb-4 md:mb-6 cursor-pointer"
+        >
+          <ArrowLeft />
+          <Typography size="body" weight="medium" className="text-primary-default">
+            Voltar
           </Typography>
         </button>
 
-        {/* Título em Retângulo Azul Arredondado */}
-        <div className="flex justify-center mb-4">
+        {/* Título */}
+        <div className="flex justify-center mb-4 md:mb-6">
           <div className="bg-primary-default rounded-full px-6 py-3 inline-block w-full text-center">
             <Typography size="body" weight="bold" className="text-white">
               {mercadoData.nome}
@@ -1111,17 +1088,20 @@ export default function Mercado() {
           </div>
         </div>
 
-      {/* Imagem + Description Card: coluna no mobile, lado a lado no desktop */}
-      <div className="flex flex-col md:flex-row-reverse gap-6 mb-6 md:max-h-[350px]">
-        {/* Imagem Arredondada */}
-        <img
-          src={mercadoData.imagemUrl}
-          alt={mercadoData.nome}
-          className="w-full md:w-1/2 max-h-[350px] md:h-full rounded-3xl shadow-md object-cover flex-shrink-0"
-        />
+        {/* Imagem */}
+        <div className="w-full mb-6 md:mb-8 overflow-hidden rounded-3xl shadow-md bg-gray-100">
+          <div className="relative w-full aspect-video md:h-96 lg:h-125">
+            <img
+              src={mercadoData.imagemUrl}
+              alt={mercadoData.nome}
+              className="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+        </div>
 
-        {/* Description Card */}
-        <div className="w-full md:w-1/2 min-w-0">
+        {/* Description Card*/}
+        <div className="mb-8 md:mb-12">
           <DescriptionCard
             description={mercadoData.descricao}
             location={mercadoData.localizacao}
@@ -1130,30 +1110,75 @@ export default function Mercado() {
         </div>
       </div>
 
-      {/* Highlights Card - Full width */}
-      <div className="mb-6 -mx-6 px-6 w-[calc(100%+3rem)]">
-        <HighlightsCard highlists={mercadoData.destaques} />
-      </div>
+        {/* SEÇÃO: Horários e Destaques */}
+        <div className="mb-8 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
+          {/* Horários */}
+          <div className="w-full">
+            <Schedules schedules={mercadoData.horarios} />
+          </div>
 
-      {/* Schedules + Item Sell: coluna no mobile, lado a lado no desktop */}
-      <div className="flex flex-col md:flex-row gap-6 mb-6 md:items-stretch">
-        <div className="w-full md:w-1/2 min-w-0">
-          <Schedules schedules={mercadoData.horarios} className="!max-w-full w-full h-full" />
+          {/* Destaques */}
+          <div className="w-full">
+            <div className="mb-6">
+              <IconTitle title="Destaques do mercado" icon={Star} />
+            </div>
+            {/* Carrossel no Mobile */}
+            <div className="md:hidden">
+              <EventCarousel cardsPerView={1} autoScrollInterval={5000} showArrows={false} height="h-auto">
+                {mercadoData.destaques.map((highlight) => (
+                  <Highlights
+                    key={highlight.id}
+                    image={highlight.image}
+                    description={highlight.description}
+                    alt={highlight.title}
+                  >
+                    <Typography size="small" weight="bold" className="text-gray-900">
+                      {highlight.title}
+                    </Typography>
+                  </Highlights>
+                ))}
+              </EventCarousel>
+            </div>
+            
+            {/* Grid no Desktop */}
+            <div className="hidden md:block">
+              <div className={`grid ${mercadoData.destaques.length < 4 ? 'grid-cols-1' : 'grid-cols-2'} gap-3`}>
+                {mercadoData.destaques.map((highlight) => (
+                  <Highlights
+                    key={highlight.id}
+                    image={highlight.image}
+                    description={highlight.description}
+                    alt={highlight.title}
+                  >
+                    <Typography size="small" weight="bold" className="text-gray-900">
+                      {highlight.title}
+                    </Typography>
+                  </Highlights>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
         <div className="w-full md:w-1/2 min-w-0">
           <ItemSell items={mercadoData.produtos} className="!max-w-full w-full h-full" />
         </div>
       </div>
 
-        {/* Highlights Card */}
-        <div className="mb-6">
-          <HighlightsCard highlists={mercadoData.destaques} />
+        {/* O que é vendido */}
+        <div className="mb-8 md:mb-12">
+          <ItemSell items={mercadoData.produtos} />
         </div>
 
         {/* Card de Eventos */}
         {mercadoData.eventos && mercadoData.eventos.length > 0 && (
-          <div className="mb-6">
-            <EventCarousel cardsPerView={cardsPerView} autoScrollInterval={5000}>
+          <div className="mb-8 md:mb-12">
+            <div className="mb-6">
+              <Typography size="body" weight="bold" className="text-gray-900 text-lg md:text-xl flex items-center gap-2">
+                <Calendar size="24" color="currentColor" />
+                Eventos
+              </Typography>
+            </div>
+            <EventCarousel cardsPerView={cardsPerView} autoScrollInterval={5000} showArrows={cardsPerView > 1}>
               {mercadoData.eventos.map((evento) => (
                 <EventCard
                   key={evento.id}
@@ -1170,33 +1195,23 @@ export default function Mercado() {
         )}
 
         {/* Map Card */}
-        <div className="mb-6">
+        <div className="mb-8 md:mb-12 w-full">
           <MapCard
             markers={markers}
             googleMapsLink={mercadoData.mapa.googleMapsLink}
             zoom={16}
             withCard={true}
+            width="w-full"
           />
         </div>
       )}
 
-      {/* Map Card - Full width */}
-      <div className="mb-6">
-        <MapCard
-          markers={markers}
-          googleMapsLink={mercadoData.mapa.googleMapsLink}
-          zoom={16}
-          withCard={true}
-          width="w-full"
-          className="w-full"
-        />
-      </div>
-
-      {/* History Card - Full width */}
-      <div className="mb-6">
-        <History className="!max-w-full w-full">
-          {mercadoData.historia}
-        </History>
+        {/* History Card */}
+        <div>
+          <History>
+            {mercadoData.historia}
+          </History>
+        </div>
       </div>
     </div>
   );

@@ -5,22 +5,25 @@ import { Book } from "../icons";
 
 export function History({ children, className = '' }){
     const [isExpanded, setIsExpanded] = useState(false);
-    const [needsTruncation, setNeedsTruncation] = useState(false);
+    const [isTruncated, setIsTruncated] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const textRef = useRef(null);
 
-    useLayoutEffect(() => {
-        const checkTruncation = () => {
-            if (textRef.current) {
-                // Só verificar truncamento quando colapsado
-                if (!isExpanded) {
-                    setNeedsTruncation(textRef.current.scrollHeight > textRef.current.clientHeight);
-                }
-            }
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
         };
-        checkTruncation();
-        window.addEventListener('resize', checkTruncation);
-        return () => window.removeEventListener('resize', checkTruncation);
-    }, [children, isExpanded]);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        if (textRef.current) {
+            setIsTruncated(textRef.current.scrollHeight > textRef.current.clientHeight);
+        }
+    }, [children, isMobile]);
+
+    const lineClampLimit = isExpanded ? 'unset' : (isMobile ? 4 : 5);
 
     return(
      <Card className={`mt-4 ${className}`}>
@@ -31,7 +34,7 @@ export function History({ children, className = '' }){
                 className="m-0 leading-relaxed"
                 style={{
                     display: '-webkit-box',
-                    WebkitLineClamp: isExpanded ? 'unset' : 5,
+                    WebkitLineClamp: lineClampLimit,
                     WebkitBoxOrient: 'vertical',
                     overflow: 'hidden'
                 }}

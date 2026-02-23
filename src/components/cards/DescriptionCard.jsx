@@ -15,13 +15,12 @@ export default function DescriptionCard({
         <Typography tag={"p"} size={"medium"} weight={"regular"}>
           {description}
         </Typography>
-      </div>
-      <div className='flex flex-row gap-2 items-center'>
-        <MapPin />
-        <Typography tag={"p"} size={"medium"} weight={"regular"} className="text-gray-500">
-          {location}
-        </Typography>
-      </div>
+        <div className='flex flex-row gap-2 items-center border-t border-gray-100 pt-2'>
+            <MapPin />
+            <Typography tag={"p"} size={"medium"} weight={"regular"} className="text-gray-500">
+            {location}
+            </Typography>
+        </div>
     </Card>
   )
 }

@@ -3,27 +3,26 @@ import { IconTitle } from '../IconTitle'
 import Card from '../Card'
 import { Typography } from '../Typography'
 
-export function Schedules({ schedules, className = '' }) {
-    return (
-        <Card className={className}>
+export function Schedules({ schedules }){
+    return(
+        <Card className="flex-1 h-full">
             <IconTitle icon={Clock} title='Horários de Funcionamento'></IconTitle>
-            <div className="mt-4 space-y-2 sm:space-y-3">
+            <div className="mt-2 pb-2 px-2 md:px-4">
                 {schedules.map((item, index) => (
-                    /*possível troca de responsividade*/
-                    <div key={index} className="flex flex-row justify-between items-center gap-4">
-                        <Typography
-                            tag="span"
-                            size="small"
+                    <div key={index} className="flex justify-between items-center px-0 py-1.5 border-b border-gray-100 last:border-b-0 gap-2"> 
+                        <Typography 
+                            tag="span" 
+                            size="small" 
                             weight="bold"
-                            className={item.isSpecial ? "text-primary-default" : "text-gray-800"}
+                            className={item.isSpecial ? "text-primary-default text-xs whitespace-nowrap" : "text-gray-900 text-xs whitespace-nowrap"}
                         >
                             {item.day}
                         </Typography>
-                        <Typography
-                            tag="span"
-                            size="small"
-                            weight="bold"
-                            className="text-gray-500 text-right whitespace-nowrap"
+                        <Typography 
+                            tag="span" 
+                            size="small" 
+                            weight="medium"
+                            className="text-gray-400 text-xs whitespace-nowrap"
                         >
                             {item.time}
                         </Typography>

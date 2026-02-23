@@ -3,13 +3,15 @@ import { ShoppingBag } from '../icons'
 import { IconTitle } from '../IconTitle'
 import { TagHolder } from '../TagHolder/'
 
-export function ItemSell({ items = [], className = '' }) {
-    return (
-        <Card className={className}>
-            <IconTitle icon={ShoppingBag} title="O que é vendido" />
-            <TagHolder
-                tags={items.map(item => ({ text: item }))}
-            />
-        </Card>
+export function ItemSell({ items = [] }){
+    return(
+     <Card>
+        <div className="mb-4">
+          <IconTitle icon={ShoppingBag} title="O que é vendido"/>
+        </div>
+        <TagHolder
+            tags={items.map(item => ({ text: item }))} 
+        />
+     </Card>   
     )
 }

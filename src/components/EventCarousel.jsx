@@ -11,6 +11,8 @@ import ArrowRight from "./icons/ArrowRight";
  * @param {number} [props.cardsPerView=4] - Cards visíveis por vez
  * @param {number} [props.autoScrollInterval=5000] - Intervalo do scroll em ms
  * @param {string} [props.className]
+ * @param {boolean} [props.showArrows=true] - Mostra setas de navegação
+ * @param {string} [props.height="h-105"] - Altura do carrossel
  */
 
 export default function EventCarousel({
@@ -18,6 +20,8 @@ export default function EventCarousel({
   cardsPerView = 4,
   autoScrollInterval = 5000,
   className = "",
+  showArrows = true,
+  height = "h-105",
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [pause, setPause] = useState(false);
@@ -66,7 +70,7 @@ export default function EventCarousel({
       {/* Container do carrossel com altura fixa e setas */}
       <div className="relative w-full">
         {/* Seta Esquerda */}
-        {totalPages > 1 && (
+        {totalPages > 1 && showArrows && (
           <button
             onClick={goToPrev}
             className="absolute left-2 sm:left-0 top-24 sm:top-1/2 sm:-translate-y-1/2 z-10 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95"
@@ -77,8 +81,8 @@ export default function EventCarousel({
         )}
 
         {/* Container dos cards */}
-        <div className="w-full overflow-hidden rounded-lg">
-          <div className="flex gap-4">
+        <div className={`w-full overflow-hidden rounded-lg ${height}`}>
+          <div className="flex gap-4 h-full">
             {/* Renderiza cada card */}
             {currentCards.map((card, idx) => (
               <div
@@ -96,7 +100,7 @@ export default function EventCarousel({
         </div>
 
         {/* Seta Direita */}
-        {totalPages > 1 && (
+        {totalPages > 1 && showArrows && (
           <button
             onClick={goToNext}
             className="absolute right-2 sm:right-0 top-24 sm:top-1/2 sm:-translate-y-1/2 z-10 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95"
@@ -133,4 +137,6 @@ EventCarousel.propTypes = {
   cardsPerView: PropTypes.number,
   autoScrollInterval: PropTypes.number,
   className: PropTypes.string,
+  showArrows: PropTypes.bool,
+  height: PropTypes.string,
 };
