@@ -13,12 +13,12 @@ import HighlightsCollection from "./HighlightsCollection";
  */
 
 
-export default function HighlightsCard({highlists}){
+export default function HighlightsCard({ highlists }) {
     return (
         <div>
-            <Card>
-                <IconTitle title="Destaques do mercado" icon={Star}/>
-                <HighlightsCollection highlists={highlists}/>
+            <Card className="!max-w-full w-full overflow-hidden">
+                <IconTitle title="Destaques do mercado" icon={Star} />
+                <HighlightsCollection highlists={highlists} />
             </Card>
         </div>
     )

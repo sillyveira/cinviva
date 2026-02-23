@@ -60,7 +60,8 @@ export default function MapCard({
   zoom = 16,
   withCard = true,
   width = 'w-80',
-  height = 'h-58'
+  height = 'h-68',
+  className = ''
 }) {
   // Usa a posição do primeiro marcador como centro, ou Recife como padrão
   const defaultCenter = [-8.0476, -34.877];
@@ -92,9 +93,9 @@ export default function MapCard({
   // Com card (comportamento padrão)
   return (
     <div
-      className="flex flex-col w-fit justify-start 
+      className={`flex flex-col justify-start 
         border border-[#6C707880] rounded-2xl 
-        px-4 pt-2 pb-1 mr-2 shadow-xl gap-3"
+        px-4 pt-2 pb-1 mr-2 shadow-xl gap-3 ${className || 'w-fit'}`}
     >
       <IconTitle icon={MapPin} title={"Localização"} />
       {mapElement}
@@ -129,4 +130,5 @@ MapCard.propTypes = {
   withCard: PropTypes.bool,
   width: PropTypes.string,
   height: PropTypes.string,
+  className: PropTypes.string,
 };

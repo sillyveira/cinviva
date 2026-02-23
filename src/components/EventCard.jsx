@@ -38,7 +38,6 @@ export default function EventCard({
                 flex-col 
                 w-full 
                 h-full
-                max-w-sm
                 border border-[#6C707880] 
                 rounded-2xl 
                 overflow-hidden
