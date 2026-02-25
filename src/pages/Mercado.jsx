@@ -10,18 +10,14 @@ import Highlights from '../components/Highlights';
 import Card from '../components/Card';
 import { Typography } from '../components/Typography';
 import { IconTitle } from '../components/IconTitle';
-import { Calendar, Star } from '../components/icons';
+import { Star } from '../components/icons';
 import ArrowLeft from '../components/icons/ArrowLeft';
-import EventCard from '../components/EventCard';
 import EventCarousel from '../components/EventCarousel';
-import { useResponsiveCards } from '../hooks/useResponsiveCards';
 
 // Importações de Imagens de Mercados
 import mercadoSaoJoseImg from '../assets/Mercados/mercadoSaoJoseImg.jpg';
 import mercadoCasaAmarelaImg from '../assets/Mercados/mercadoCasaAmarelaImg.jpg';
 import mercadoEncruzilhadaImg from '../assets/Mercados/mercadoEncruzilhadaImg.jpg';
-import mercadoBeberibeImg from '../assets/Mercados/mercadoBeberibeImg.jpeg';
-import mercadoNovaDescobertaImg from '../assets/Mercados/mercadoNovaDescobertaImg.webp';
 import mercadoBoaVistaImg from '../assets/Mercados/mercadoBoaVistaImg.jpg';
 import mercadoMadalenaImg from '../assets/Mercados/mercadoMadalena.jpg';
 import mercadoCordeiroImg from '../assets/Mercados/mercadoCordeiroImg.jpg';
@@ -38,8 +34,6 @@ import consertoDeSapatosImg from '../assets/Destaques/consertoDeSapatosImg.jpg';
 import frigorificoImg from '../assets/Destaques/frigorificoImg.jpg';
 import peixariaImg from '../assets/Destaques/peixariaImg.webp';
 import consertoDeeletronicosImg from '../assets/Destaques/consertoDeeletronicosImg.jpg';
-import floriculturaImg from '../assets/Destaques/floriculturaImg.webp';
-import lanchonetesImg from '../assets/Destaques/lanchonetesImg.jpg';
 import musicaAoVivoImg from '../assets/Destaques/musicaAoVivoImg.jpg';
 import restaurantesImg from '../assets/Destaques/restaurantesImg.jpg';
 import cabeleireiroImg from '../assets/Destaques/cabeleireiroImg.jpg';
@@ -409,250 +403,6 @@ const getMercadoData = (mercadoId) => {
           location: "Parque da Jaqueira"
         }
       ]
-    },
-    beberibe: {
-      nome: "Mercado de Beberibe",
-      descricao: "Recentemente revitalizado, o Mercado de Beberibe, localizado na histórica Praça da Convenção, reúne mais de 50 boxes e um pátio de feira com cereais, frutas, verduras e artigos variados, além de serviços como conserto de chaves, ótica e lanchonetes. É um ponto de comércio e convivência tradicional da região.",
-      localizacao: "Praça da Convenção, nº 128, Beberibe",
-      imagemUrl: mercadoBeberibeImg,
-      horarios: [
-        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Sábado", time: "06h - 18h", isSpecial: false },
-        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true }
-      ],
-      produtos: [
-        "Bolsas e Sapatos",
-        "Artigos Religiosos",
-        "Artesanato Comunitário",
-        "Hortifruti Regional",
-        "Lanchonetes",
-        "Artigos de Merceria",
-        "Artigos para Casa",
-        "Cereais e Grãos",
-        "Flores"
-      ],
-      mapa: {
-        position: [-8.00245351858246, -34.89717080228127],
-        googleMapsLink: "https://maps.app.goo.gl/oRXWKpRh5StAkB1K9"
-      },
-      historia: "A construção do mercado público Beberibe, assim como todo equipamento público, surgiu da demanda popular por um centro comercial organizado. O mercado e a feira foram fundados em 1930, na histórica região Beberibe, nas proximidades da praça da Convenção que foi importante palco de revoluções e socialização dos moradores ao longo dos séculos. Ultimamente é um importante ponto de referência na busca por itens tradicionais de feira e serviços.",
-      destaques: [
-        {
-          id: 1,
-          image: consertoDeRelogiosImg,
-          description: "Ajustes, troca de bateria e pequenos reparos em relógios.",
-          title: "Conserto de Relógios"
-        },
-        {
-          id: 2,
-          image: consertoDeeletronicosImg,
-          description: "Reparos em aparelhos eletrônicos do dia a dia.",
-          title: "Conserto de Eletrônicos"
-        },
-        {
-          id: 3,
-          image: consertoDeOculosImg,
-          description: "Venda e ajuste de óculos, lentes e acessórios ópticos.",
-          title: "Óticas"
-        },
-        {
-          id: 4,
-          image: floriculturaImg,
-          description: "Venda de flores, plantas e arranjos decorativos.",
-          title: "Floricultura"
-        }
-      ],
-      eventos: [
-        {
-          id: 1,
-          date: "QUA, 04 MAI",
-          time: "18:00",
-          title: "Poesia do Recife",
-          location: "Mercado São José",
-          imageUrl: "https://i.pinimg.com/736x/12/fe/b5/12feb5724268fa74bb5a4ba7ecb73b75.jpg",
-          imageAlt: "Evento - Poesia do Recife"
-        },
-        {
-          id: 2,
-          imageUrl: "https://i.pinimg.com/1200x/84/be/bc/84bebccc63b8a4e76ba3a846aaabaa1a.jpg",
-          imageAlt: "Evento - Oficina Criativa",
-          date: "SEX, 06 MAI",
-          time: "14:30",
-          title: "Oficina Criativa de Artesanato",
-          location: "Espaço Comunitário Centro"
-        },
-        {
-          id: 3,
-          imageUrl: "https://i.pinimg.com/736x/12/fe/b5/12feb5724268fa74bb5a4ba7ecb73b75.jpg",
-          imageAlt: "Evento - Mercado Orgânico",
-          date: "SÁB, 07 MAI",
-          time: "08:00",
-          title: "Mercado Orgânico Semanal",
-          location: "Praça da República"
-        },
-        {
-          id: 4,
-          imageUrl: 'https://i.pinimg.com/1200x/1c/83/56/1c83565b93e8308a604237bd0ea7ce19.jpg',
-          imageAlt: 'Evento - Feira de Livros',
-          date: "DOM, 08 MAI",
-          time: "10:00",
-          title: "Feira de Livros Usados",
-          location: "Biblioteca Central"
-        },
-        {
-          id: 5,
-          imageUrl: "https://i.pinimg.com/1200x/84/be/bc/84bebccc63b8a4e76ba3a846aaabaa1a.jpg",
-          imageAlt: "Evento - Show Musical",
-          date: "SEG, 09 MAI",
-          time: "20:00",
-          title: "Show Musical ao Vivo",
-          location: "Anfiteatro do Recife"
-        },
-        {
-          id: 6,
-          imageUrl: 'https://i.pinimg.com/736x/9e/bc/dc/9ebcdc8102c42b5dc1d8246c9e6eb505.jpg',
-          imageAlt: 'Evento - Fotografia',
-          date: "TER, 10 MAI",
-          time: "15:00",
-          title: "Workshop de Fotografia",
-          location: "Estúdio Criativo"
-        },
-        {
-          id: 7,
-          imageUrl: "https://i.pinimg.com/736x/5f/fe/02/5ffe02ca4d2e0302f803a6e9a153baaa.jpg",
-          imageAlt: "Evento - Yoga no Parque",
-          date: "QUA, 11 MAI",
-          time: "07:00",
-          title: "Yoga no Parque",
-          location: "Parque da Jaqueira"
-        }
-      ]
-    },
-    novadescoberta: {
-      nome: "Mercado de Nova Descoberta",
-      descricao: "Recentemente revitalizado, Mercado de Nova Descoberta, com mais de 80 boxes, oferece desde carnes, cereais e hortifrutis até artigos religiosos, papelaria, acessórios e serviços variados como corte e costura e conserto de eletrodomésticos. É um espaço que atende diariamente a diferentes necessidades da comunidade local.",
-      localizacao: " Av. Ver. Otacílio Azevedo, 2311 - Vasco da Gama",
-      imagemUrl: mercadoNovaDescobertaImg,
-      horarios: [
-        { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Quarta-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Quinta-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Sexta-feira", time: "06h - 18h", isSpecial: false },
-        { day: "Sábado", time: "06h - 18h", isSpecial: false },
-        { day: "Domingo e Feriados", time: "06h - 13h", isSpecial: true }
-      ],
-      produtos: [
-        "Bolsas e Sapatos",
-        "Artigos Religiosos",
-        "Artesanato Comunitário",
-        "Hortifruti Regional",
-        "Lanchonetes",
-        "Artigos de Papelaria",
-        "Artigos para Casa",
-        "Cereais e Grãos",
-        "Flores"
-      ],
-      mapa: {
-        position: [-8.000333, -34.922689],
-        googleMapsLink: "https://maps.app.goo.gl/vkBdRniV4YvbucBJ6"
-      },
-      historia: "O Mercado de Nova Descoberta foi uma iniciativa particular. Construído pelo senhor Roberto Marinho, dono de imobiliária e proprietário do sítio que havia no local, foi inaugurado em 1973. O nome original era Centro Comercial de Nova Descoberta. Em 1976, a Prefeitura adquiriu o empreendimento, e mudou a denominação. Possui 91 boxes, que vendem carnes, cereais, frutas e verduras, além de artigos de armarinho. O equipamento reúne diariamente uma variada clientela, desde estudantes que procuram por artigos de papelaria e acessórios, a pessoas em busca de consertos em eletrodomésticos e outros serviços ofertados por lá.",
-      destaques: [
-        {
-          id: 1,
-          image: consertoDeRoupasImg,
-          description: "Ajustes, reformas e pequenos consertos em peças de vestuário.",
-          title: "Conserto de roupas"
-        },
-        {
-          id: 2,
-          image: consertoDeSapatosImg,
-          description: "Reparos em calçados, como troca de solado, colagem e ajustes.",
-          title: "Conserto de sapatos"
-        },
-        {
-          id: 3,
-          image: consertoDeeletronicosImg,
-          description: "Reparos em aparelhos eletrônicos do dia a dia.",
-          title: "Conserto de Eletrônicos"
-        },
-        {
-          id: 4,
-          image: frigorificoImg,
-          description: "Venda de carnes frescas, cortes variados e produtos refrigerados.",
-          title: "Frigorífico"
-        }
-      ],
-      eventos: [
-          {
-            id: 1,
-            date: "QUA, 04 MAI",
-            time: "18:00",
-            title: "Poesia do Recife",
-            location: "Mercado São José",
-            imageUrl: "https://i.pinimg.com/736x/12/fe/b5/12feb5724268fa74bb5a4ba7ecb73b75.jpg",
-            imageAlt: "Evento - Poesia do Recife"
-          },
-          {
-            id: 2,
-            imageUrl: "https://i.pinimg.com/1200x/84/be/bc/84bebccc63b8a4e76ba3a846aaabaa1a.jpg",
-            imageAlt: "Evento - Oficina Criativa",
-            date: "SEX, 06 MAI",
-            time: "14:30",
-            title: "Oficina Criativa de Artesanato",
-            location: "Espaço Comunitário Centro"
-          },
-          {
-            id: 3,
-            imageUrl: "https://i.pinimg.com/736x/12/fe/b5/12feb5724268fa74bb5a4ba7ecb73b75.jpg",
-            imageAlt: "Evento - Mercado Orgânico",
-            date: "SÁB, 07 MAI",
-            time: "08:00",
-            title: "Mercado Orgânico Semanal",
-            location: "Praça da República"
-          },
-          {
-            id: 4,
-            imageUrl: 'https://i.pinimg.com/1200x/1c/83/56/1c83565b93e8308a604237bd0ea7ce19.jpg',
-            imageAlt: 'Evento - Feira de Livros',
-            date: "DOM, 08 MAI",
-            time: "10:00",
-            title: "Feira de Livros Usados",
-            location: "Biblioteca Central"
-          },
-          {
-            id: 5,
-            imageUrl: "https://i.pinimg.com/1200x/84/be/bc/84bebccc63b8a4e76ba3a846aaabaa1a.jpg",
-            imageAlt: "Evento - Show Musical",
-            date: "SEG, 09 MAI",
-            time: "20:00",
-            title: "Show Musical ao Vivo",
-            location: "Anfiteatro do Recife"
-          },
-          {
-            id: 6,
-            imageUrl: 'https://i.pinimg.com/736x/9e/bc/dc/9ebcdc8102c42b5dc1d8246c9e6eb505.jpg',
-            imageAlt: 'Evento - Fotografia',
-            date: "TER, 10 MAI",
-            time: "15:00",
-            title: "Workshop de Fotografia",
-            location: "Estúdio Criativo"
-          },
-          {
-            id: 7,
-            imageUrl: "https://i.pinimg.com/736x/5f/fe/02/5ffe02ca4d2e0302f803a6e9a153baaa.jpg",
-            imageAlt: "Evento - Yoga no Parque",
-            date: "QUA, 11 MAI",
-            time: "07:00",
-            title: "Yoga no Parque",
-            location: "Parque da Jaqueira"
-          }
-        ]
     },
     boavista: {
       nome: "Mercado da Boa Vista",
@@ -1039,7 +789,6 @@ export default function Mercado() {
   const { mercadoId } = useParams();
   const navigate = useNavigate();
   const [mercadoData, setMercadoData] = useState(null);
-  const cardsPerView = useResponsiveCards(); // Hook para responsividade
 
   useEffect(() => {
     // Simulação de chamada à API
@@ -1163,31 +912,6 @@ export default function Mercado() {
       <div className="mb-8 md:mb-12">
         <ItemSell items={mercadoData.produtos} />
       </div>
-
-        {/* Card de Eventos */}
-        {mercadoData.eventos && mercadoData.eventos.length > 0 && (
-          <div className="mb-8 md:mb-12">
-            <div className="mb-6">
-              <Typography size="body" weight="bold" className="text-gray-900 text-lg md:text-xl flex items-center gap-2">
-                <Calendar size="24" color="currentColor" />
-                Eventos
-              </Typography>
-            </div>
-            <EventCarousel cardsPerView={cardsPerView} autoScrollInterval={5000} showArrows={cardsPerView > 1}>
-              {mercadoData.eventos.map((evento) => (
-                <EventCard
-                  key={evento.id}
-                  imageUrl={evento.imageUrl}
-                  imageAlt={evento.imageAlt}
-                  date={evento.date}
-                  time={evento.time}
-                  title={evento.title}
-                  location={evento.location}
-                />
-              ))}
-            </EventCarousel>
-          </div>
-        )}
 
         {/* Map Card */}
         <div className="mb-8 md:mb-12 w-full">

@@ -10,10 +10,11 @@ import imgCard from '../assets/Eventos/imgCard.png'
  * @param {Object} props
  * @param {string} [props.imageUrl] - URL da imagem (padrão = imgCard)
  * @param {string} [props.imageAlt] - Texto alternativo para a imagem (padrão = 'Imagem do evento')
- * @param {string} props.date - Data
+ * @param {string} props.date - Data formatada para exibição
  * @param {string} props.time - Horário
  * @param {string} props.title - Título
  * @param {string} props.location - Local
+ * @param {boolean} [props.isPast] - Se o evento já passou (data em vermelho)
  * @param {string} [props.className]
  * @param {Function} [props.onClick]
  */
@@ -26,6 +27,7 @@ export default function EventCard({
     time = '',
     title = '',
     location = '',
+    isPast = false,
     className = '',
     onClick = null
 }) {
@@ -73,19 +75,22 @@ export default function EventCard({
                         tag="span"
                         size="xsmall"
                         weight="regular"
-                        className="text-gray-400"
+                        className={isPast ? "text-red-500 font-semibold" : "text-gray-400"}
                     >
                         {date}
                     </Typography>
-                    <span className="text-gray-400">•</span>
+                    <span className={isPast ? "text-red-500" : "text-gray-400"}>•</span>
                     <Typography
                         tag="span"
                         size="xsmall"
                         weight="regular"
-                        className="text-gray-400"
+                        className={isPast ? "text-red-500 font-semibold" : "text-gray-400"}
                     >
                         {time}
                     </Typography>
+                    {isPast && (
+                        <span className="ml-1 text-xs text-red-500 font-semibold">(Encerrado)</span>
+                    )}
                 </div>
 
                 {/* Título */}
@@ -123,6 +128,7 @@ EventCard.propTypes = {
     time: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
+    isPast: PropTypes.bool,
     className: PropTypes.string,
     onClick: PropTypes.func,
 }
