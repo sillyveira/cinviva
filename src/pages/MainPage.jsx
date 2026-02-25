@@ -21,7 +21,11 @@ import mercadoBoaVistaImg from '../assets/Mercados/mercadoBoaVistaImg.jpg';
 import mercadoMadalenaImg from '../assets/Mercados/mercadoMadalena.jpg';
 import mercadoCordeiroImg from '../assets/Mercados/mercadoCordeiroImg.jpg';
 
-const description = `A Conviva administra 42 equipamentos, dentre eles estão os pátios de feiras, as feiras livres, os centros comerciais, as praças de alimentação, os centros de comércio popular e os mercados públicos, como os localizados na Boa Vista, Madalena, Encruzilhada, Cordeiro, São José e Casa Amarela. A Autarquia também executa manutenção, revitalização e obras nesses espaços, que são centros de cultura, história e culinária regionais.`
+const description = `Recife respira tradição também através dos seus mercados públicos. São mais de 15 espalhados pela cidade, reunindo cultura, história e muita movimentação econômica.
+
+Muito além das compras, esses espaços são pontos de encontro: tem artesanato, renda, couro, artigos religiosos, sabores regionais irresistíveis e aquele som ao vivo que anima o passeio.
+
+Visitar um mercado é sentir, de perto, o que é ser recifense. Vamos nessa?`
 
 export default function MainPage(){
     const navigate = useNavigate();
