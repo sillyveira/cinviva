@@ -22,23 +22,6 @@ import mercadoBoaVistaImg from '../assets/Mercados/mercadoBoaVistaImg.jpg';
 import mercadoMadalenaImg from '../assets/Mercados/mercadoMadalena.jpg';
 import mercadoCordeiroImg from '../assets/Mercados/mercadoCordeiroImg.jpg';
 
-// Importações de Imagens de Destaques
-import graficasImg from '../assets/Destaques/graficasImg.avif';
-import paesImg from '../assets/Destaques/paesImg.jpg';
-import consertoDeRelogiosImg from '../assets/Destaques/consertoDeRelogiosImg.jpg';
-import consertoDeCelularesImg from '../assets/Destaques/consertoDeCelularesImg.avif';
-import consertoDeOculosImg from '../assets/Destaques/consertoDeOculosImg.jpg';
-import chaveiroImg from '../assets/Destaques/chaveiroImg.webp';
-import consertoDeRoupasImg from '../assets/Destaques/consertoDeRoupasImg.jpg';
-import consertoDeSapatosImg from '../assets/Destaques/consertoDeSapatosImg.jpg';
-import frigorificoImg from '../assets/Destaques/frigorificoImg.jpg';
-import peixariaImg from '../assets/Destaques/peixariaImg.webp';
-import consertoDeeletronicosImg from '../assets/Destaques/consertoDeeletronicosImg.jpg';
-import musicaAoVivoImg from '../assets/Destaques/musicaAoVivoImg.jpg';
-import restaurantesImg from '../assets/Destaques/restaurantesImg.jpg';
-import cabeleireiroImg from '../assets/Destaques/cabeleireiroImg.jpg';
-import cafeteriaImg from '../assets/Destaques/cafeteriaImg.jpeg';
-
 // Mock API - Simulação de dados do mercado
 const getMercadoData = (mercadoId) => {
   const mercadosDatabase = {
@@ -75,15 +58,15 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: graficasImg,
-          description: "Serviço de impressão ágil para materiais simples, como panfletos, cartazes e documentos.",
-          title: "Gráficas"
+          image: "https://placehold.co/100x100",
+          description: "Peças únicas feitas à mão, com identidade cultural pernambucana.",
+          title: "Artesanato"
         },
         {
           id: 2,
-          image: paesImg,
-          description: "Produção artesanal de pães frescos, feitos diariamente e disponíveis para encomenda antecipada pelos clientes.",
-          title: "Produção diária de pães sob encomenda"
+          image: "https://placehold.co/100x100",
+          description: "Venda de peixes e frutos do mar frescos, com variedade regional.",
+          title: "Peixaria"
         }
       ],
       eventos: [
@@ -186,21 +169,21 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: consertoDeRelogiosImg,
-          description: "Ajustes, troca de bateria e pequenos reparos para manter o funcionamento dos relógios.",
-          title: "Conserto de relógios"
+          image: "https://placehold.co/100x100",
+          description: "Ajustes, reparos e manutenção de relógios, celulares, óculos e eletrônicos em geral.",
+          title: "Consertos em geral"
         },
         {
           id: 2,
-          image: consertoDeCelularesImg,
-          description: "Manutenção básica, troca de tela, bateria e conserto de componentes comuns.",
-          title: "Conserto de celulares"
+          image: "https://placehold.co/100x100",
+          description: "Variedade de itens de armarinho, papelaria, acessórios e utilidades do dia a dia.",
+          title: "Miudezas"
         },
         {
           id: 3,
-          image: consertoDeOculosImg,
-          description: "Ajustes de armação, troca de peças e pequenos reparos.",
-          title: "Conserto de óculos"
+          image: "https://placehold.co/100x100",
+          description: "Frutas, verduras, lanches e produtos alimentícios frescos para o dia a dia.",
+          title: "Alimentação"
         }
       ],
       eventos: [
@@ -303,39 +286,21 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: frigorificoImg,
-          description: "Venda de carnes frescas, cortes variados e produtos refrigerados.",
-          title: "Frigorífico"
+          image: "https://placehold.co/100x100",
+          description: "Carnes, cereais, hortifruti, laticínios e opções de refeição no local.",
+          title: "Alimentação"
         },
         {
           id: 2,
-          image: peixariaImg,
-          description: "Venda de peixes e frutos do mar frescos, com variedade regional.",
-          title: "Peixaria"
+          image: "https://placehold.co/100x100",
+          description: "Chaveiro, conserto de roupas, sapatos, eletrônicos e outros serviços práticos.",
+          title: "Serviços em geral"
         },
         {
           id: 3,
-          image: chaveiroImg,
-          description: "Cópia de chaves, abertura de fechaduras e serviços rápidos.",
-          title: "Chaveiro"
-        },
-        {
-          id: 4,
-          image: consertoDeRoupasImg,
-          description: "Ajustes, reparos e pequenos consertos em peças de vestuário.",
-          title: "Conserto de roupas"
-        },
-        {
-          id: 5,
-          image: consertoDeSapatosImg,
-          description: "Reparos, ajustes e restauração básica de calçados.",
-          title: "Conserto de sapatos"
-        },
-        {
-          id: 6,
-          image: consertoDeeletronicosImg,
-          description: "Manutenção e reparo de eletrônicos de uso cotidiano.",
-          title: "Conserto de eletrônicos"
+          image: "https://placehold.co/100x100",
+          description: "Utensílios, tecidos, aviamentos e produtos para organização da casa.",
+          title: "Artigos para o lar"
         }
       ],
       eventos: [
@@ -438,27 +403,9 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: graficasImg,
-          description: "Impressões, cópias e serviços gráficos feitos com rapidez.",
-          title: "Gráfica rápida"
-        },
-        {
-          id: 2,
-          image: musicaAoVivoImg,
-          description: "Apresentações musicais que trazem movimento e cultura ao mercado.",
-          title: "Música ao vivo"
-        },
-        {
-          id: 3,
-          image: restaurantesImg,
-          description: "Espaços para refeições completas, petiscos e bebidas variadas.",
-          title: "Bares e restaurantes"
-        },
-        {
-          id: 4,
-          image: cabeleireiroImg,
-          description: "Serviços de corte, cuidados com o cabelo e estética em geral.",
-          title: "Cabeleireiro"
+          image: "https://placehold.co/100x100",
+          description: "Frutas, verduras, carnes, bebidas, temperos e refeições no local.",
+          title: "Alimentação"
         }
       ],
       eventos: [
@@ -561,39 +508,21 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: musicaAoVivoImg,
-          description: "Apresentações musicais que trazem movimento e cultura ao mercado.",
-          title: "Música ao vivo"
+          image: "https://placehold.co/100x100",
+          description: "Frutas, verduras, cereais, peixaria, bares e restaurantes variados.",
+          title: "Alimentação"
         },
         {
           id: 2,
-          image: restaurantesImg,
-          description: "Espaços para refeições completas, petiscos e bebidas variadas.",
-          title: "Bares e restaurantes"
+          image: "https://placehold.co/100x100",
+          description: "Rações, acessórios e produtos para o cuidado de pets.",
+          title: "Artigos para animais"
         },
         {
           id: 3,
-          image: cabeleireiroImg,
-          description: "Serviços de corte, cuidados com o cabelo e estética em geral.",
-          title: "Cabeleireiro"
-        },
-        {
-          id: 4,
-          image: cafeteriaImg,
-          description: "Cafés, bebidas quentes e opções para uma pausa rápida.",
-          title: "Cafeteria"
-        },
-        {
-          id: 5,
-          image: consertoDeRoupasImg,
-          description: "Costura sob medida, ajustes e pequenos reparos em roupas.",
-          title: "Corte e costura"
-        },
-        {
-          id: 6,
-          image: cabeleireiroImg,
-          description: "Corte de cabelo, barba e cuidados tradicionais masculinos.",
-          title: "Barbearia"
+          image: "https://placehold.co/100x100",
+          description: "Corte e costura, cabeleireiro, barbearia e manutenção em geral.",
+          title: "Consertos em geral"
         }
       ],
       eventos: [
@@ -697,21 +626,21 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: chaveiroImg,
-          description: "Cópia de chaves, abertura de fechaduras e serviços rápidos.",
-          title: "Chaveiro"
+          image: "https://placehold.co/100x100",
+          description: "Cereais, grãos, hortifruti, bares e restaurantes para o dia a dia.",
+          title: "Alimentação"
         },
         {
           id: 2,
-          image: restaurantesImg,
-          description: "Espaços para refeições completas, petiscos e bebidas variadas.",
-          title: "Bares e restaurantes"
+          image: "https://placehold.co/100x100",
+          description: "Chaveiro, conserto de eletrônicos e outros serviços práticos.",
+          title: "Consertos em geral"
         },
         {
           id: 3,
-          image: consertoDeeletronicosImg,
-          description: "Reparos em aparelhos eletrônicos do dia a dia, com serviços simples e acessíveis.",
-          title: "Conserto de eletrônicos"
+          image: "https://placehold.co/100x100",
+          description: "Acessórios, artigos religiosos, flores, bolsas e produtos variados.",
+          title: "Miudezas"
         }
       ],
       eventos: [
