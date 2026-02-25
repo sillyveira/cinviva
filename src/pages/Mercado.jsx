@@ -22,6 +22,12 @@ import mercadoBoaVistaImg from '../assets/Mercados/mercadoBoaVistaImg.jpg';
 import mercadoMadalenaImg from '../assets/Mercados/mercadoMadalena.jpg';
 import mercadoCordeiroImg from '../assets/Mercados/mercadoCordeiroImg.jpg';
 
+// Importações de Imagens dos Destaques
+import alimentacaoCordeiroImg from '../assets/Destaques/alimentacao_cordeiro.jpg';
+import miudezasCordeiroImg from '../assets/Destaques/miudezas_cordeiro.jpg';
+import consertoCordeiroImg from '../assets/Destaques/conserto_cordeiro.jpg';
+
+
 // Mock API - Simulação de dados do mercado
 const getMercadoData = (mercadoId) => {
   const mercadosDatabase = {
@@ -626,19 +632,19 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: "https://placehold.co/100x100",
+          image: alimentacaoCordeiroImg,
           description: "Cereais, grãos, hortifruti, bares e restaurantes para o dia a dia.",
           title: "Alimentação"
         },
         {
           id: 2,
-          image: "https://placehold.co/100x100",
+          image: consertoCordeiroImg,
           description: "Chaveiro, conserto de eletrônicos e outros serviços práticos.",
           title: "Consertos em geral"
         },
         {
           id: 3,
-          image: "https://placehold.co/100x100",
+          image: miudezasCordeiroImg,
           description: "Acessórios, artigos religiosos, flores, bolsas e produtos variados.",
           title: "Miudezas"
         }
