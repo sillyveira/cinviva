@@ -35,6 +35,9 @@ import alimentacaoBoaVistaImg from '../assets/Destaques/alimentacao_boavista.jpg
 import alimentacaoCasaAmarela from '../assets/Destaques/alimentacao_casaamarela.jpg'
 import consertoCasaAmarela from  '../assets/Destaques/conserto_casaamarela.jpg'
 import miudezasCasaAmarela from '../assets/Destaques/miudezas_casaamarela.jpg'
+import alimentacaoMadalenaImg from '../assets/Destaques/alimentacao_madalena.jpg'
+import animaisMadalenaImg from '../assets/Destaques/animais_madalena.jpg'
+import servicosMadalenaImg from '../assets/Destaques/servicos_madalena.jpg'
 
 
 // Mock API - Simulação de dados do mercado
@@ -523,19 +526,19 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: "https://placehold.co/100x100",
+          image: alimentacaoMadalenaImg,
           description: "Frutas, verduras, cereais, peixaria, bares e restaurantes variados.",
           title: "Alimentação"
         },
         {
           id: 2,
-          image: "https://placehold.co/100x100",
+          image: animaisMadalenaImg,
           description: "Rações, acessórios e produtos para o cuidado de pets.",
           title: "Artigos para animais"
         },
         {
           id: 3,
-          image: "https://placehold.co/100x100",
+          image: servicosMadalenaImg,
           description: "Corte e costura, cabeleireiro, barbearia e manutenção em geral.",
           title: "Consertos em geral"
         }
