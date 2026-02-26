@@ -15,6 +15,8 @@ import ArrowRight from "./icons/ArrowRight";
  * @param {string} [props.height="h-105"] - Altura do carrossel
  */
 
+const MAX_DOTS_MOBILE = 5; // Máximo de bolinhas visíveis no mobile
+
 export default function EventCarousel({
   children,
   cardsPerView = 4,
@@ -25,8 +27,20 @@ export default function EventCarousel({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [pause, setPause] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  
   const cardArray = React.Children.toArray(children);
   const totalPages = Math.ceil(cardArray.length / cardsPerView);
+
+  // Detecta mudanças no tamanho da tela
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   // scroll: a cada intervalo, avança para a próxima página. se estiver pausado, tira o timer.
   useEffect(() => {
     if (autoScrollInterval <= 0 || totalPages <= 1) return;
@@ -40,6 +54,30 @@ export default function EventCarousel({
     }
     return () => clearInterval(interval);
   }, [totalPages, autoScrollInterval, pause]);
+
+  // Calcula o range de bolinhas a mostrar no mobile
+  const getVisibleDots = () => {
+    if (!isMobile || totalPages <= MAX_DOTS_MOBILE) {
+      // Desktop ou menos bolinhas que o máximo: mostra todas
+      return { start: 0, end: totalPages };
+    }
+
+    // Mobile com muitas bolinhas: calcula o range centralizado
+    const halfWindow = Math.floor(MAX_DOTS_MOBILE / 2);
+    let start = currentIndex - halfWindow;
+    let end = start + MAX_DOTS_MOBILE;
+
+    // Ajusta se sair do range válido
+    if (start < 0) {
+      start = 0;
+      end = MAX_DOTS_MOBILE;
+    } else if (end > totalPages) {
+      end = totalPages;
+      start = Math.max(0, end - MAX_DOTS_MOBILE);
+    }
+
+    return { start, end };
+  };
 
   // Funções de navegação. Pausa quando clica e volta ao automático em 5 segundos.
   const goToNext = () => {
@@ -114,18 +152,28 @@ export default function EventCarousel({
       {/* Bolinhas indicadoras*/}
       {totalPages > 1 && (
         <div className="flex justify-center gap-2">
-          {Array.from({ length: totalPages }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "bg-primary-default w-7"
-                  : "bg-gray-300 hover:bg-gray-400 w-2.5"
-              }`}
-              aria-label={`Página ${index + 1}`}
-            />
-          ))}
+          {(() => {
+            const { start, end } = getVisibleDots();
+            const displayDots = [];
+
+            // Adiciona bolinhas no range calculado
+            for (let index = start; index < end; index++) {
+              displayDots.push(
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-primary-default w-7"
+                      : "bg-gray-300 hover:bg-gray-400 w-2.5"
+                  }`}
+                  aria-label={`Página ${index + 1}`}
+                />
+              );
+            }
+
+            return displayDots;
+          })()}
         </div>
       )}
     </div>
