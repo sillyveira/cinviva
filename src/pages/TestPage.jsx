@@ -26,12 +26,11 @@ import {
 import Card from '../components/Card';
 import { Accordion } from '../components/Accordion'
 import HighlightsCard from '../components/HighlightsCard';
-import Bolo from '../assets/Destaques/boloDeRoloImg.png'
-import Charque from '../assets/Destaques/charqueImg.jpg'
+
 
 const mockHighlights = [
-    {id: 1, image: Bolo, description: "Doce tradicional pernambucano, feito artesanalmente e muito procurado no mercado.", icon: Tag, title: "Bolo de rolo", size: "xsmall"},
-    {id: 2, image: Charque, description: "Prato típico, conhecido pelo sabor marcante e preparo tradicional.", icon: Tag, title: "Macaxeira com charque.", size: "xs"}
+    {id: 1, image: "https://placehold.co/100x100", description: "Doce tradicional pernambucano, feito artesanalmente e muito procurado no mercado.", icon: Tag, title: "Bolo de rolo", size: "xsmall"},
+    {id: 2, image: "https://placehold.co/100x100", description: "Prato típico, conhecido pelo sabor marcante e preparo tradicional.", icon: Tag, title: "Macaxeira com charque.", size: "xs"}
   ]
 
 export default function TestPage() {
