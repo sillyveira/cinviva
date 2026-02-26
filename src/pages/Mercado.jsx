@@ -32,6 +32,9 @@ import artigosEncruzilhadaImg from '../assets/Destaques/artigos_encruzilhada.jpg
 import artesanatoSaoJoseImg from '../assets/Destaques/artesanato_saojose.jpg';
 import peixariaSaoJoseImg from '../assets/Destaques/peixaria_saojose.jpg';
 import alimentacaoBoaVistaImg from '../assets/Destaques/alimentacao_boavista.jpg'
+import alimentacaoCasaAmarela from '../assets/Destaques/alimentacao_casaamarela.jpg'
+import consertoCasaAmarela from  '../assets/Destaques/conserto_casaamarela.jpg'
+import miudezasCasaAmarela from '../assets/Destaques/miudezas_casaamarela.jpg'
 
 
 // Mock API - Simulação de dados do mercado
@@ -181,19 +184,19 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: "https://placehold.co/100x100",
+          image: consertoCasaAmarela,
           description: "Ajustes, reparos e manutenção de relógios, celulares, óculos e eletrônicos em geral.",
           title: "Consertos em geral"
         },
         {
           id: 2,
-          image: "https://placehold.co/100x100",
+          image: miudezasCasaAmarela,
           description: "Variedade de itens de armarinho, papelaria, acessórios e utilidades do dia a dia.",
           title: "Miudezas"
         },
         {
           id: 3,
-          image: "https://placehold.co/100x100",
+          image: alimentacaoCasaAmarela,
           description: "Frutas, verduras, lanches e produtos alimentícios frescos para o dia a dia.",
           title: "Alimentação"
         }
