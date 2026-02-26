@@ -30,7 +30,8 @@ import alimentacaoEncruzilhadaImg from '../assets/Destaques/alimentacao_encruzil
 import servicosEncruzilhadaImg from '../assets/Destaques/servicos_encruzilhada.jpg';
 import artigosEncruzilhadaImg from '../assets/Destaques/artigos_encruzilhada.jpg';
 import artesanatoSaoJoseImg from '../assets/Destaques/artesanato_saojose.jpg';
-import peixariaSaoJoseImg from '../assets/Destaques/peixaria_saojose.jpg'
+import peixariaSaoJoseImg from '../assets/Destaques/peixaria_saojose.jpg';
+import alimentacaoBoaVistaImg from '../assets/Destaques/alimentacao_boavista.jpg'
 
 
 // Mock API - Simulação de dados do mercado
@@ -414,7 +415,7 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: "https://placehold.co/100x100",
+          image: alimentacaoBoaVistaImg,
           description: "Frutas, verduras, carnes, bebidas, temperos e refeições no local.",
           title: "Alimentação"
         }
