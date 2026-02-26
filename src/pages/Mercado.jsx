@@ -26,6 +26,9 @@ import mercadoCordeiroImg from '../assets/Mercados/mercadoCordeiroImg.jpg';
 import alimentacaoCordeiroImg from '../assets/Destaques/alimentacao_cordeiro.jpg';
 import miudezasCordeiroImg from '../assets/Destaques/miudezas_cordeiro.jpg';
 import consertoCordeiroImg from '../assets/Destaques/conserto_cordeiro.jpg';
+import alimentacaoEncruzilhadaImg from '../assets/Destaques/alimentacao_encruzilhada.jpg';
+import servicosEncruzilhadaImg from '../assets/Destaques/servicos_encruzilhada.jpg';
+import artigosEncruzilhadaImg from '../assets/Destaques/artigos_encruzilhada.jpg'
 
 
 // Mock API - Simulação de dados do mercado
@@ -278,7 +281,7 @@ const getMercadoData = (mercadoId) => {
         "Alimentos Orgânicos",
         "Artesanato Comunitário",
         "Restaurantes",
-        "Tecidos e Aviamento",
+        "Tecidos e Aviamentos",
         "Artigos para Pets",
         "Artigos para Casa",
         "Laticínios",
@@ -292,19 +295,19 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: "https://placehold.co/100x100",
-          description: "Carnes, cereais, hortifruti, laticínios e opções de refeição no local.",
+          image: alimentacaoEncruzilhadaImg,
+          description: "Restaurantes, lanchonetes e opções de refeição no local.",
           title: "Alimentação"
         },
         {
           id: 2,
-          image: "https://placehold.co/100x100",
+          image: servicosEncruzilhadaImg,
           description: "Chaveiro, conserto de roupas, sapatos, eletrônicos e outros serviços práticos.",
           title: "Serviços em geral"
         },
         {
           id: 3,
-          image: "https://placehold.co/100x100",
+          image: artigosEncruzilhadaImg,
           description: "Utensílios, tecidos, aviamentos e produtos para organização da casa.",
           title: "Artigos para o lar"
         }
