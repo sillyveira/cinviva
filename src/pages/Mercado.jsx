@@ -28,7 +28,9 @@ import miudezasCordeiroImg from '../assets/Destaques/miudezas_cordeiro.jpg';
 import consertoCordeiroImg from '../assets/Destaques/conserto_cordeiro.jpg';
 import alimentacaoEncruzilhadaImg from '../assets/Destaques/alimentacao_encruzilhada.jpg';
 import servicosEncruzilhadaImg from '../assets/Destaques/servicos_encruzilhada.jpg';
-import artigosEncruzilhadaImg from '../assets/Destaques/artigos_encruzilhada.jpg'
+import artigosEncruzilhadaImg from '../assets/Destaques/artigos_encruzilhada.jpg';
+import artesanatoSaoJoseImg from '../assets/Destaques/artesanato_saojose.jpg';
+import peixariaSaoJoseImg from '../assets/Destaques/peixaria_saojose.jpg'
 
 
 // Mock API - Simulação de dados do mercado
@@ -67,13 +69,13 @@ const getMercadoData = (mercadoId) => {
       destaques: [
         {
           id: 1,
-          image: "https://placehold.co/100x100",
+          image: artesanatoSaoJoseImg,
           description: "Peças únicas feitas à mão, com identidade cultural pernambucana.",
           title: "Artesanato"
         },
         {
           id: 2,
-          image: "https://placehold.co/100x100",
+          image: peixariaSaoJoseImg,
           description: "Venda de peixes e frutos do mar frescos, com variedade regional.",
           title: "Peixaria"
         }
