@@ -29,7 +29,7 @@ export default function Highlights({image, children, description, alt}){
             {/* Imagem */}
             <div className="flex justify-center w-20 md:w-20 h-20 shrink-0">
                 <img 
-                    className="border-2 rounded-lg border-primary-default h-20 w-20 object-cover" 
+                    className="border-2 rounded-lg border-primary-default h-20 w-20 object-contain object-top" 
                     src={image}
                     alt={alt ? alt : ""} 
                 />

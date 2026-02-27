@@ -48,6 +48,7 @@ const getMercadoData = (mercadoId) => {
       descricao: "O Mercado de São José é um dos principais centros populares de comércio do Recife, reunindo mais de 500 boxes que oferecem artesanato, artigos religiosos, especiarias, pescados e diversos produtos regionais, além de serviços como gráfica rápida e padarias. A principal ideia desse mercado é reunir tudo em um só lugar!",
       localizacao: "Praça Dom Vital, S/N - São José",
       imagemUrl: mercadoSaoJoseImg,
+      imagePosition: "center",
       horarios: [
         { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
         { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
@@ -158,6 +159,7 @@ const getMercadoData = (mercadoId) => {
       descricao: "O Mercado de Casa Amarela é um espaço tradicional da Zona Norte do Recife, com mais de 90 boxes no mercado e um pátio de feira que oferece desde frutas, verduras e plantas até artigos para casa, bolsas, brinquedos e acessórios. É um ponto de encontro que une turismo, comércio variado e serviços em um só lugar.",
       localizacao: "Rua Padre Lemos, 94 - Casa Amarela",
       imagemUrl: mercadoCasaAmarelaImg,
+      imagePosition: "center",
       horarios: [
         { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
         { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
@@ -275,6 +277,7 @@ const getMercadoData = (mercadoId) => {
       descricao: "O Mercado da Encruzilhada é um tradicional ponto comercial da Zona Norte do Recife, com mais de 200 boxes que oferecem desde alimentos, artigos para casa e tecidos até pets, lanchonetes e restaurantes. É um espaço onde praticidade e diversidade se encontram no dia a dia.",
       localizacao: "Rua Doutor José Maria, 2-200 - Encruzilhada",
       imagemUrl: mercadoEncruzilhadaImg,
+      imagePosition: "center",
       horarios: [
         { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
         { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
@@ -392,6 +395,7 @@ const getMercadoData = (mercadoId) => {
       descricao: "O Mercado da Boa Vista, no centro do Recife, conta com mais de 50 boxes que oferecem frutas, verduras, legumes, bebidas, artigos para casa e itens descartáveis, além de serviços como gráfica, cabeleireiro, bares e restaurantes. É um espaço tradicional que combina comércio e gastronomia em um só lugar.",
       localizacao: "Rua Santa Cruz, S/N - Boa Vista",
       imagemUrl: mercadoBoaVistaImg,
+      imagePosition: "bottom",
       horarios: [
         { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
         { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
@@ -497,6 +501,7 @@ const getMercadoData = (mercadoId) => {
       descricao: "O Mercado da Madalena, com mais de 100 boxes, oferece desde frutas, verduras e cereais até artigos para casa e aviamentos, além de serviços como peixaria, corte e costura, bares e restaurantes. É um espaço tradicional que combina comércio variado e pontos de encontro na Zona Oeste do Recife.",
       localizacao: "Rua Real da Torre, 521 - Madalena",
       imagemUrl: mercadoMadalenaImg,
+      imagePosition: "top",
       horarios: [
         { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
         { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
@@ -614,6 +619,7 @@ const getMercadoData = (mercadoId) => {
       descricao: "O Mercado do Cordeiro, na Zona Oeste do Recife, reúne mais de 100 boxes com cereais, grãos, artigos religiosos, flores, acessórios, produtos para pets e serviços diversos, além de bares e restaurantes. É um importante centro de abastecimento e convivência da região.",
       localizacao: "Avenida General San Martin, S/N - Cordeiro",
       imagemUrl: mercadoCordeiroImg,
+      imagePosition: "center",
       horarios: [
         { day: "Segunda-feira", time: "06h - 18h", isSpecial: false },
         { day: "Terça-feira", time: "06h - 18h", isSpecial: false },
@@ -790,7 +796,11 @@ export default function Mercado() {
             <img
               src={mercadoData.imagemUrl}
               alt={mercadoData.nome}
-              className="w-full h-full object-cover object-center"
+              className={`w-full h-full object-cover ${
+                mercadoData.imagePosition === 'top' ? 'object-top' : 
+                mercadoData.imagePosition === 'bottom' ? 'object-bottom' : 
+                'object-center'
+              }`}
               loading="lazy"
             />
           </div>
