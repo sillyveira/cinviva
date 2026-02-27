@@ -3,10 +3,12 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import MainPage from './pages/MainPage'
 import Mercado from './pages/Mercado'
 import TestPage from './pages/TestPage'
+import Header from './components/Header'
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<MainPage />} />
