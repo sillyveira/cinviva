@@ -2,40 +2,58 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography } from './Typography';
 
-export function AccordionItem({ text, imageSrc, onClick, className = '' }) {
+export function AccordionItem({ text, imageSrc, onClick, address, schedule, className = '' }) {
+  const isClickable = typeof onClick === 'function';
+
   return (
     <div 
-      onClick={onClick}
+      onClick={isClickable ? onClick : undefined}
       className={`
         relative overflow-hidden
         flex items-center justify-between 
         p-4 
-        bg-white cursor-pointer 
+        bg-white
         transition-colors duration-200
         border-b border-gray-200        
         last:border-b-0
-        hover:bg-gray-50
-        group
-
-        after:absolute
-        after:bottom-0
-        after:left-0
-        after:w-full
-        after:h-[1px]
-        after:bg-primary-default
-        after:hidden              /* Escondido por padrão */
-        hover:after:block         /* Aparece instantaneamente no hover */
+        ${isClickable ? 'cursor-pointer hover:bg-gray-50 group after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-primary-default after:hidden hover:after:block' : ''}
         ${className}
       `}
     >
-      <Typography 
-        tag="p" 
-        size="body" 
-        weight="regular" 
-        className="text-gray-800 group-hover:text-primary-default transition-colors"
-      >
-        {text}
-      </Typography>
+      <div className="flex flex-col gap-0.5">
+        <Typography 
+          tag="p" 
+          size="body" 
+          weight="regular" 
+          className={`text-gray-800 ${isClickable ? 'group-hover:text-primary-default transition-colors' : ''}`}
+        >
+          {text}
+        </Typography>
+
+        {/* Endereço: exibido quando não há imagem */}
+        {address && (
+          <Typography
+            tag="p"
+            size="xsmall"
+            weight="regular"
+            className="text-gray-500"
+          >
+            {address}
+          </Typography>
+        )}
+
+        {/* Horários de funcionamento */}
+        {schedule && (
+          <Typography
+            tag="p"
+            size="xsmall"
+            weight="regular"
+            className="text-gray-400"
+          >
+            {schedule}
+          </Typography>
+        )}
+      </div>
 
       {/* Renderização Condicional: Só mostra a imagem SE ela existir */}
       {imageSrc && (
@@ -51,7 +69,9 @@ export function AccordionItem({ text, imageSrc, onClick, className = '' }) {
 
 AccordionItem.propTypes = {
   text: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string, 
+  imageSrc: PropTypes.string,
   onClick: PropTypes.func,
+  address: PropTypes.string,
+  schedule: PropTypes.string,
   className: PropTypes.string,
 };

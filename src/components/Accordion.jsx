@@ -49,7 +49,9 @@ export function Accordion({ title, items, className = '' }) {
               key={item.id || index}
               text={item.text}
               imageSrc={item.imageSrc}
-              onClick={item.onClick || (() => console.log(`Clicou em: ${item.text}`))}
+              onClick={item.onClick}
+              address={item.address}
+              schedule={item.schedule}
             />
           ))}
         </div>

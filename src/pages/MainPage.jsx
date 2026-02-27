@@ -36,7 +36,7 @@ export default function MainPage(){
 
     // Busca eventos da API
     useEffect(() => {
-        fetch('https://cats-backend.app.emprel.gov.br/cats/eventos?ativo=true&pagina=0&quantidade=20&categoriaEvento=1')
+        fetch('https://cats-backend.app.emprel.gov.br/cats/eventos?ativo=true&pagina=0&quantidade=103&categoriaEvento=1')
             .then(res => res.json())
             .then(data => {
                 if (data.sucesso && data.resposta?.dados) {
@@ -132,8 +132,36 @@ export default function MainPage(){
   ];
 
   const feirasData = [
-    { id: 1, text: 'Feira de Boa Viagem' },
-    { id: 2, text: 'Feira do Bom Jesus' },
+    { id: 1, text: 'Pátio de Feira da UR-01' },
+    { id: 2, text: 'Pátio de Feira de Casa Amarela' },
+    { id: 3, text: 'Pátio de Feira da Mustardinha' }
+  ];
+
+  const mercadosSemPaginaData = [
+    {
+      id: 10,
+      text: 'Mercado e Pátio de Beberibe',
+      address: 'Praça da Convenção, n° 128, Beberibe',
+      schedule: 'Seg–Sex: 06h–18h | Sáb: 06h–18h | Dom: 06h–13h'
+    },
+    {
+      id: 11,
+      text: 'Mercado de Nova Descoberta',
+      address: 'Ver. Otacílio Azevedo, 2311, Vasco da Gama',
+      schedule: 'Seg–Sex: 06h–18h | Sáb: 06h–18h | Dom: 06h–13h'
+    },
+    {
+      id: 12,
+      text: 'Mercado de Afogados',
+      address: 'Estrada dos Remédios, Afogados',
+      schedule: 'Seg–Sex: 06h–18h | Sáb: 06h–18h | Dom: 06h–13h'
+    },
+    {
+      id: 13,
+      text: 'Mercado de Água Fria',
+      address: 'Av. Beberibe - Água Fria',
+      schedule: 'Seg–Sex: 06h–18h | Sáb: 06h–18h | Dom: 06h–13h'
+    }
   ];
 
     const markers = [
@@ -237,6 +265,7 @@ export default function MainPage(){
                 <section className="hidden md:block mb-16 lg:mb-20">
                     <div className="space-y-4">
                         <Accordion title="Mercados" items={mercadosDataWithNavigation} />
+                        <Accordion title="Outros Equipamentos" items={mercadosSemPaginaData} />
                         <Accordion title="Feiras" items={feirasData} />
                     </div>
                 </section>
@@ -245,6 +274,7 @@ export default function MainPage(){
                 <section className="md:hidden mb-8">
                     <div className="space-y-4">
                         <Accordion title="Mercados" items={mercadosDataWithNavigation} />
+                        <Accordion title="Outros Equipamentos" items={mercadosSemPaginaData} />
                         <Accordion title="Feiras" items={feirasData} />
                     </div>
                 </section>
