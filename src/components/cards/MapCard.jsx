@@ -105,7 +105,7 @@ export default function MapCard({
           href={googleMapsLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer justify-center mb-1.5 flex flex-row gap-2 border border-[#6C707880] rounded-xl py-1 hover:scale-105 transition-all delay"
+          className="cursor-pointer justify-center mb-1.5 flex flex-row gap-2 border border-[#6C707880] rounded-xl py-1 hover:brightness-55 transition-all"
         >
           <Typography>
             Ver no Google Maps 

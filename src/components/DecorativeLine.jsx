@@ -1,7 +1,7 @@
 
 export default function DecorativeLine({ lightColor = "#0089F3", darkColor = "#173DB6" }) {
     return (
-        <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden mb-12 md:mb-16 lg:mb-20 flex justify-center">
+        <div className="w-screen relative left-1/2 -translate-x-1/2 overflow-hidden mb-12 md:mb-16 lg:mb-20 flex justify-center">
             <svg 
                 width="100%" 
                 height="100" 
