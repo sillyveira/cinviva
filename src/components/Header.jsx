@@ -8,14 +8,14 @@ export default function Header() {
 
       <div className="max-w-6xl mx-auto px-8 py-3 flex items-center justify-start gap-4">
         <img
-          src="/logo-pcr.svg"
-          alt="Logo PCR"
-          className="h-20"
-        />
-        <img
           src="/logo-conecta.png"
           alt="Logo Conecta"
           className="h-15"
+        />
+        <img
+          src="/logo-pcr.svg"
+          alt="Logo PCR"
+          className="h-20"
         />
       </div>
     </header>
