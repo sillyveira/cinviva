@@ -12,6 +12,7 @@ import { IconTitle } from "../components/IconTitle";
 import DecorativeLine from "../components/DecorativeLine";
 import EventCarousel from "../components/EventCarousel";
 import EventCard from "../components/EventCard";
+import { Link } from "react-router-dom";
 import { useResponsiveCards } from "../hooks/useResponsiveCards";
 
 // Importações de Imagens de Mercados
@@ -132,9 +133,24 @@ export default function MainPage(){
   ];
 
   const feirasData = [
-    { id: 1, text: 'Pátio de Feira da UR-01' },
-    { id: 2, text: 'Pátio de Feira de Casa Amarela' },
-    { id: 3, text: 'Pátio de Feira da Mustardinha' }
+    { 
+        id: 1, text: 'Pátio de Feira da UR-01', 
+        address: 'Ladeira da Cohab, nº 3, bairro do Ibura',
+        schedule: 'Seg–Sex: 06h–18h | Sáb: 06h–18h | Dom: 06h–13h'
+    },
+
+    { 
+        id: 2, text: 'Pátio de Feira de Casa Amarela',
+        address: 'Rua Padre Lemos, n° 94, Casa Amarela',
+        schedule: 'Seg–Sex: 06h–18h | Sáb: 06h–18h | Dom: 06h–13h'
+    },
+
+    { 
+        id: 3,
+        text: 'Pátio de Feira da Mustardinha',
+        address: 'Rua Eudoro Pires, n° 50, Mustardinha',
+        schedule: 'Seg–Sex: 06h–18h | Sáb: 06h–18h | Dom: 06h–13h'
+    }
   ];
 
   const mercadosSemPaginaData = [
@@ -242,12 +258,12 @@ export default function MainPage(){
                     </Typography>
 
                     {/* Botão Ir ao site do Conviva*/}
-                    <div className="w-full flex justify-start">
+                    <a href="https://conviva.recife.pe.gov.br" target="_blank" rel="noopener noreferrer" className="w-full flex justify-start">
                         <ButtonIcon 
                             text="Ir ao site do Conviva" 
                             icon={<ArrowRight color="white"/>} 
                         />
-                    </div>
+                    </a>
                 </section>
 
                 {/* SEÇÃO 2: Mercados e Feiras (Desktop apenas) */}
